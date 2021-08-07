@@ -1,0 +1,142 @@
+<!doctype html>
+<html class="no-js" lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <title>TAO release {{ version }} - System requirements</title>
+  <meta name="description" content="System requirements for TAO release {{ version }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body class="sr-wrapper">
+  <header>
+    <h1>System requirements for TAO {{ version }}</h1>
+  </header>
+  <main>
+    <section>
+      <h2>Browsers</h2>
+      <ul class="browsers">
+        {{#each browsers}}
+        <li class="{{this.key}}">
+          <span class="icon"></span>
+          <div class="title">{{this.label}}</div>
+          <span class="versions">{{this.versionStr}}</span>
+        </li>
+        {{/each}}
+      </ul>
+    </section>
+    <section>
+      <h2>Server</h2>
+      <p>When you are using TAO from the source</p>
+      <h3>Programming Language</h3>
+      <ul class="programming-language">
+        {{#each server.stack.language}}
+        <li class="{{this.key}}">
+          <span class="title">{{this.label}}</span>
+          <span class="versions">{{this.versions}}</span>
+        </li>
+        {{/each}}
+      </ul>
+      <h3>Web Server</h3>
+      <ul class="server">
+        {{#each server.stack.server}}
+        <li class="{{this.key}}">
+          <span class="title">{{this.label}}</span>
+          <span class="versions">{{this.versions}}</span>
+        </li>
+        {{/each}}
+      </ul>
+      <h3>Database</h3>
+      <ul class="database">
+        {{#each server.stack.database}}
+        <li class="{{this.key}}">
+          <span class="title">{{this.label}}</span>
+          <span class="versions">{{this.versions}}</span>
+        </li>
+        {{/each}}
+      </ul>
+    </section>
+    <section>
+      <h2>Docker</h2>
+      <p>When you are using TAO as a container image</p>
+      <ul class="container">
+        {{#each server.virtualized.container}}
+        <li class="{{this.key}}">
+          <span class="title">{{this.label}}</span>
+          <span class="versions">{{this.versions}}</span>
+        </li>
+        {{/each}}
+      </ul>
+    </section>
+    {{#if viewportDevices}}
+    <section>
+      <h2>Viewports and Devices</h2>
+      <h3>Tests we performed on mobile screens</h3>
+      <div class="viewports-devices">
+        {{#each viewportDevices}}
+        <details>
+          <summary>{{this.env.label}}</summary>
+          <table>
+            <colgroup>
+              <col class="th">
+              <col>
+            </colgroup>
+            <thead>
+              <tr>
+                <th colspan="2">Environment</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>TAO</th>
+                <td>{{this.env.tao.version}} / {{this.env.tao.testRunner}}</td>
+              </tr>
+              {{#if this.env.deviceStr}}
+              <tr>
+                <th>Device</th>
+                <td>{{this.env.deviceStr}}</td>
+              </tr>
+              {{/if}}
+              <tr>
+                <th>Screen</th>
+                <td>{{this.env.screen.width}} × {{this.env.screen.height}} / {{this.env.screen.aspectRatio}} /
+                  {{this.env.screen.orientation}}</td>
+              </tr>
+            </tbody>
+          </table>
+          {{#if this.interactions}}
+          <table>
+            <colgroup>
+              <col class="th">
+              <col>
+            </colgroup>
+            <thead>
+              <tr>
+                <th colspan="2">Comments</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each this.interactions}}
+              <tr>
+                <th>{{this.label}}</th>
+                <td>{{this.comment}}</td>
+              </tr>
+              {{/each}}
+              {{/if}}
+            </tbody>
+          </table>
+        </details>
+        {{/each}}
+      </div>
+    </section>
+    {{/if}}
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+{
+    "api": {
+        "out": "build/api"
+    },
+    "html": {
+        "in": "src/templates/index.hbs",
+        "out": "build/index.html"
+    },
+    "css": {
+        "in": "src/scss/main.scss",
+        "out": "build/css/main.css"
+    },
+    "assets": {
+        "in": "src/assets/web",
+        "out": "build"
+    },
+    "data": {
+        "in": "src/data"
+    }
+}

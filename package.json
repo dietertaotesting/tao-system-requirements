@@ -1,0 +1,38 @@
+{
+  "name": "tao-system-requirements",
+  "homepage": "http://oat-sa.github.io/tao-system-requirements",
+  "description": "Collect the system requirements for TAO from various sources",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "@oat-sa/browserslist-config-tao": "^0.3.1",
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "@rollup/stream": "^2.0.0",
+    "browserslist": "^4.16.7",
+    "compare-versions": "^3.6.0",
+    "datauri": "^3.0.0",
+    "eslint": "^7.32.0",
+    "fast-xml-parser": "^3.19.0",
+    "fs-extra": "^9.1.0",
+    "handlebars": "^4.7.7",
+    "lodash": "^4.17.21",
+    "rollup": "^2.56.0",
+    "rollup-plugin-cleanup": "^3.2.1",
+    "sass": "^1.37.5",
+    "ua-parser-js": "^0.7.28"
+  },
+  "scripts": {
+    "req:dev": "node --experimental-json-modules ./src/builders/build",
+    "req:build": "npx browserslist@latest --update-db & npm run req:dev",
+    "pci:build": "rollup -c ./src/config/rollup.js"
+  },
+  "browserslist": [
+    "extends @oat-sa/browserslist-config-tao"
+  ],
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

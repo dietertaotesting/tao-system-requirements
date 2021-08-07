@@ -1,0 +1,40 @@
+{
+    "stack": {
+        "database": [
+            {
+                "label": "MySQL",
+                "versions": ["5.7"]
+            },
+            {
+                "label": "MariaDB",
+                "versions": ["10.4"]
+            },
+            {
+                "label": "PostgreSQL",
+                "versions": ["9.6"]
+            }
+        ],
+        "server": [
+            {
+                "label": "Apache",
+                "versions": ["2.4"]
+            },
+            {
+                "label": "nginx",
+                "versions": ["1.2"]
+            }
+        ],
+        "language": [
+            {
+                "label": "PHP",
+                "versions": ["7.4"]
+            }
+        ]
+    },
+    "virtualized": {
+        "container": [{
+            "label": "Docker Desktop",
+            "versions": ["3.5"]
+        }]
+    }
+}

@@ -1,0 +1,270 @@
+html {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	color: #333;
+	background-color: #fff;
+	font: 62.5% 'Open Sans', sans-serif;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 1.5rem;
+}
+
+* {
+	background-color: inherit;
+	box-sizing: inherit;
+	font-weight: normal;
+
+	&:before {
+		background-color: inherit;
+		box-sizing: inherit;
+		font-weight: normal;
+	}
+
+	&:after {
+		background-color: inherit;
+		box-sizing: inherit;
+		font-weight: normal;
+	}
+}
+
+.sr-wrapper {
+	padding: 2rem;
+
+	h1 {
+		margin: 0 0 1rem 0;
+		font-size: 2.6rem;
+	}
+
+	h2 {
+		font-size: 2.2rem;
+		margin: 0 0 .5rem 0;
+	}
+
+	h3 {
+		font-size: 1.6rem;
+		margin: 0 0 .5rem 0;
+	}
+
+	ul {
+		margin: 0 0 1rem 0
+	}
+
+	section {
+		margin-top: 2.5rem
+	}
+
+	.browsers {
+		display: flex;
+		flex-wrap: wrap;
+		list-style: none;
+		margin: 2rem 0 0 0;
+		padding: 0;
+		gap: 1.5rem 4rem;
+
+		li {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.icon {
+			width: 50px;
+			height: 50px;
+			margin: 0 auto .3rem;
+			background-repeat: no-repeat;
+			background-image: url(media/icons.png);
+			transform: scale(.7);
+			position: relative;
+			top: .2rem;
+		}
+
+		.title {
+			font-size: 1.4rem;
+		}
+
+		[class^="chrome"] {
+			.icon {
+				background-position: 0 0;
+			}
+		}
+
+		[class^="edge"] {
+			.icon {
+				background-position: 0 -60px;
+			}
+		}
+
+		[class^="firefox"] {
+			.icon {
+				background-position: 0 -120px;
+			}
+		}
+
+		[class^="internet-explorer"] {
+			.icon {
+				background-position: 0 -180px;
+			}
+		}
+
+		[class^="safari"] {
+			.icon {
+				background-position: 0 -240px;
+			}
+		}
+
+		[class*="-android"] {
+			.icon {
+				&::before {
+					content: '';
+					display: block;
+					width: 5rem;
+					height: 3.5rem;
+					transform: scale(.7);
+					position: absolute;
+					bottom: -1.5rem;
+					right: -3rem;
+					background-repeat: inherit;
+					border-radius: 1rem;
+					box-sizing: content-box;
+					padding: 1rem;
+					opacity: .7;
+				}
+
+				&::after {
+					content: '';
+					display: block;
+					width: 5rem;
+					height: 3.5rem;
+					transform: scale(.7);
+					position: absolute;
+					bottom: -1.5rem;
+					right: -3rem;
+					background-repeat: inherit;
+					border-radius: 1rem;
+					box-sizing: content-box;
+					padding: 1rem;
+					background-image: inherit;
+					background-color: transparent;
+					background-position: center -300px;
+				}
+			}
+		}
+
+		[class*="-ios"] {
+			.icon {
+				&::before {
+					content: '';
+					display: block;
+					width: 5rem;
+					height: 3.5rem;
+					transform: scale(.7);
+					position: absolute;
+					bottom: -1.5rem;
+					right: -3rem;
+					background-repeat: inherit;
+					border-radius: 1rem;
+					box-sizing: content-box;
+					padding: 1rem;
+					opacity: .7;
+				}
+
+				&::after {
+					content: '';
+					display: block;
+					width: 5rem;
+					height: 3.5rem;
+					transform: scale(.7);
+					position: absolute;
+					bottom: -1.5rem;
+					right: -3rem;
+					background-repeat: inherit;
+					border-radius: 1rem;
+					box-sizing: content-box;
+					padding: 1rem;
+					background-image: inherit;
+					background-color: transparent;
+					background-position: center -360px;
+				}
+			}
+		}
+	}
+
+	.viewports-devices {
+
+		details {
+			width: 400px;
+			margin-bottom: 3px;
+
+			&[open] {
+				margin-bottom: 6px;
+				summary {
+					&:before {
+						transform: rotate(-90deg);
+						right: 10px;
+						top: 6px;
+					}
+				}
+			}
+		}
+
+		summary {
+			background: #ddd;
+			cursor: pointer;
+			position: relative;
+			white-space: nowrap;
+			list-style: none;
+			padding: 2px 21px 2px 3px;
+			border: 1px #ccc solid;
+
+			&::marker {
+				display: none
+			}
+
+			&:before {
+				content: "❯";
+				font-size: 9px;
+				position: absolute;
+				display: inline-block;
+				transform: rotate(90deg);
+				transform-origin: center;
+				right: 8px;
+				top: 6px
+			}
+		}
+
+		table {
+			border-collapse: collapse;
+			width: 100%;
+			table-layout: fixed;
+			margin-bottom: 5px
+		}
+
+		th,
+		td {
+			text-align: left;
+			font-size: 1.4rem;
+			padding: 2px 4px;
+			border: 1px #ddd solid
+		}
+
+		th {
+			background-color: #eee;
+		}
+
+		thead {
+			th {
+				font-weight: bold;
+			}
+		}
+
+		.th {
+			width: 30%;
+		}
+
+	}
+
+}
