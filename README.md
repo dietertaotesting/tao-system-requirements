@@ -11,6 +11,6 @@ A simple REST API is available.
 - Current version, server: https://oat-sa.github.io/tao-system-requirements/build/api/server-latest.json  
 - Current version, viewports and devices: https://oat-sa.github.io/tao-system-requirements/build/api/viewportDevices-latest.json 
 
-You can also retrieve data a particular release by replacing `-latest.json` by `-{release}.json`. Data is kept for to past releases.
+You can also retrieve data for a particular release by replacing `-latest.json` by `-{release}.json`. Data is kept for to past releases.
 
 The stylesheet including all icons is available at https://oat-sa.github.io/tao-system-requirements/build/css/main.css.
