@@ -20,7 +20,7 @@ If you want to use the styles from the website, the stylesheet including all ico
 ### Updating the repository
 The repository needs to be updated with every TAO Community Release.
 
-First you need to update your local copy of the repository:
+Update your local copy of the repository:
 
 ```bash 
 git pull origin develop
@@ -45,7 +45,8 @@ npm run update:versions
 
 Alternatively you can edit `/data/*.json` manually, for instance if you want to add or remove a component.
 
-#### Updating all versions at once
+#### Updating all of the above at once
+For your convenience, `npm run update` combines the two tasks above.
 ```bash
 npm run update
 ```
