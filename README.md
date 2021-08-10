@@ -16,7 +16,7 @@ You can also retrieve data for a particular release by replacing `-latest.json` 
 ### Assets 
 Download the [TAO Standard Viewport and Device Test](assets/test/tao-vd-test.zip).
 
-Download the [PCI](assets/pci/taoenvinfo.zip) to create your own test. If you want to implement a similar system you are probably mostly interested in `/data-providerviewport-devices.js`.
+Download the [PCI](assets/pci/taoenvinfo.zip) to create your own test. If you want to implement a similar system you are probably mostly interested in [/data-providerviewport-devices.js].
 
 If you want to use the styles from the website, the stylesheet including all icons is available at [/build/css/main.css](https://oat-sa.github.io/tao-system-requirements/build/css/main.css). You can also use `/src/scss` as a base for your own flavor.
 
