@@ -6,11 +6,71 @@ https://oat-sa.github.io/tao-system-requirements
 ### API 
 A simple REST API is available.
 
-- Current version, combined: https://oat-sa.github.io/tao-system-requirements/build/api/system-requirements-latest.json 
-- Current version, browsers: https://oat-sa.github.io/tao-system-requirements/build/api/browsers-latest.json  
-- Current version, server: https://oat-sa.github.io/tao-system-requirements/build/api/server-latest.json  
-- Current version, viewports and devices: https://oat-sa.github.io/tao-system-requirements/build/api/viewportDevices-latest.json 
+- Latest version, combined: [/build/api/system-requirements-latest.json](https://oat-sa.github.io/tao-system-requirements/build/api/system-requirements-latest.json)
+- Latest version, browsers only: [/build/api/browsers-latest.json](https://oat-sa.github.io/tao-system-requirements/build/api/browsers-latest.json)  
+- Latest version, server side only: [/build/api/server-latest.json](https://oat-sa.github.io/tao-system-requirements/build/api/server-latest.json)  
+- Latest version, viewports and devices only: [/build/api/viewportDevices-latest.json](https://oat-sa.github.io/tao-system-requirements/build/api/viewportDevices-latest.json)
 
-You can also retrieve data for a particular release by replacing `-latest.json` by `-{release}.json`. Data is kept for to past releases.
+You can also retrieve data for a particular release by replacing `-latest.json` with `-{release}.json`, data is kept for the two past releases. 
 
-The stylesheet including all icons is available at https://oat-sa.github.io/tao-system-requirements/build/css/main.css.
+If you want to use the styles from the website, the stylesheet including all icons is available at [/build/css/main.css](https://oat-sa.github.io/tao-system-requirements/build/css/main.css). You can also use `/src/scss` as a base for your own flavor.
+
+---
+
+### Updating the repository
+The repository needs to be updated with every TAO Community Release.
+
+First you need to update your local copy of the repository:
+
+```bash 
+git pull origin develop
+```
+
+If you have no local copy yet, clone the repository first:
+
+```bash
+git clone https://github.com/oat-sa/tao-system-requirements.git
+git checkout develop
+```
+
+#### Updating the browser database
+```bash
+npm run update:browsers
+```
+
+#### Updating the versions of TAO, Server, Database or Docker
+```bash
+npm run update:versions
+```
+
+Alternatively you can edit `/data/*.json` manually, for instance if you want to add or remove a component.
+
+#### Updating all versions at once
+```bash
+npm run update
+```
+
+#### Updating viewports and devices
+1. Download the [TAO Standard Viewport and Device Test](assets/tao-vd-test.zip). 
+2. Run the test on at least one mobile device, ideally on a ~7″ screen in landscape mode.
+3. In your TAO instance download the results from the tests and copy them to `/data/viewport-devices`. Older data will be deleted automatically during the build process. ![Download](assets/media/download.png)
+
+#### Commit your changes
+If you perform only some of the above tasks it is important to commit and push your changes to the repository.
+```bash
+git add -A
+git commit -m "version updated to 1.2.3" # or "test results for 1.2.3"
+git push origin develop
+``` 
+
+#### Rebuild the website and the APIs
+Once everything is up-to-date you need to rebuild the website and the APIs and update the repository.
+
+```bash
+npm run build
+git add -A
+git commit -m "rebuilt API for 1.2.3"
+git push origin develop
+```
+
+Finally create a pull request to `main` and merge your changes.
