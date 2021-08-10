@@ -18,15 +18,18 @@
     "fs-extra": "^9.1.0",
     "handlebars": "^4.7.7",
     "lodash": "^4.17.21",
+    "prompts": "^2.4.1",
     "rollup": "^2.56.0",
     "rollup-plugin-cleanup": "^3.2.1",
     "sass": "^1.37.5",
     "ua-parser-js": "^0.7.28"
   },
   "scripts": {
-    "req:dev": "node --experimental-json-modules ./src/builders/build",
-    "req:build": "npx browserslist@latest --update-db & npm run req:dev",
-    "pci:build": "rollup -c ./src/config/rollup.js"
+    "build": "node --experimental-json-modules ./src/builders/build",
+    "update": "npm run update:browsers & npm run update:versions",
+    "update:versions": "node --experimental-json-modules ./src/updater/updater.js",
+    "update:browsers": "npx browserslist@latest --update-db",
+    "pci:build": "rollup -c ./src/pci/config/rollup.js"
   },
   "browserslist": [
     "extends @oat-sa/browserslist-config-tao"
