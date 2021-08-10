@@ -13,6 +13,11 @@ A simple REST API is available.
 
 You can also retrieve data for a particular release by replacing `-latest.json` with `-{release}.json`, data is kept for the two past releases. 
 
+### Assets 
+Download the [TAO Standard Viewport and Device Test](assets/test/tao-vd-test.zip).
+
+Download the [PCI](assets/pci/taoenvinfo.zip) to create your own test. If you want to implement a similar system you are probably mostly interested in `/data-providerviewport-devices.js`.
+
 If you want to use the styles from the website, the stylesheet including all icons is available at [/build/css/main.css](https://oat-sa.github.io/tao-system-requirements/build/css/main.css). You can also use `/src/scss` as a base for your own flavor.
 
 ---
@@ -52,7 +57,7 @@ npm run update
 ```
 
 #### Updating viewports and devices
-1. Download the [TAO Standard Viewport and Device Test](assets/tao-vd-test.zip). 
+1. Download the [TAO Standard Viewport and Device Test](assets/test/tao-vd-test.zip). 
 2. Run the test on at least one mobile device, ideally on a ~7″ screen in landscape mode.
 3. In your TAO instance download the results from the tests and copy them to `/data/viewport-devices`. Older data will be deleted automatically during the build process. ![Download](assets/media/download.png)
 
