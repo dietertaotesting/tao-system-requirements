@@ -15,6 +15,6 @@
         "out": "build"
     },
     "data": {
-        "in": "src/data"
+        "in": "data"
     }
 }
