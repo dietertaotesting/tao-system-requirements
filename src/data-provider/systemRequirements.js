@@ -1,14 +1,14 @@
 import getBrowserData from "./browser.js"; 
 import getServerData from "./server.js";
 import getViewportDeviceData from "./viewport-devices.js";
-import getVersion from "./version.js";
+import getRelease from "./tao-release.js";
 
 const get = () => {
     return {
         browsers: getBrowserData(),
         viewportDevices: getViewportDeviceData(),
         server: getServerData(),
-        version: getVersion()
+        version: getRelease()
     }
 }
 

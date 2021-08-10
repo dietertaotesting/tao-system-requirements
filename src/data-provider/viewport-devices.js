@@ -1,5 +1,5 @@
 import fs from 'fs-extra';
-import getVersion from './version.js';
+import getRelease from './tao-release.js';
 import paths from '../config/paths.json';
 import parser from 'fast-xml-parser';
 import _ from 'lodash';
@@ -10,7 +10,7 @@ const getResultXml = () => {
     for (let file of fs.readdirSync(`${paths.data.in}/viewport-devices`)) {
         let path = `${paths.data.in}/viewport-devices/${file}`
         let xml = fs.readFileSync(path, 'utf8');
-        if (xml.includes(`"tao":{"version":"${getVersion()}"`)) {
+        if (xml.includes(`"tao":{"version":"${getRelease()}"`)) {
             data.push(xml);
         }
     }

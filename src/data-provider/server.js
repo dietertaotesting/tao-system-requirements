@@ -1,10 +1,12 @@
-import data from '../data/server.json';
+import fs from 'fs-extra';
+import paths from '../config/paths.json';
 
 /**
  * Fetch and return data from 
  * @returns {{stack: {database: {}, server: {}, language: {}}, virtualized: {container: {}}}}
  */
 const getServerData = () => {
+    const data = fs.readJsonSync(`${paths.data.in}/server.json`);
     [
         data.stack.server,
         data.stack.database,
