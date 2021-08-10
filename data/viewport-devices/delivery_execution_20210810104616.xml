@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assessmentResult xmlns="http://www.imsglobal.org/xsd/imsqti_result_v2p1">
+  <context sourcedId="i1628278849903218108"/>
+  <testResult identifier="org/#i1628278879620218109" datestamp="2021-08-06T21:44:43.019">
+    <outcomeVariable identifier="LtiOutcome" cardinality="single" baseType="float">
+      <value><![CDATA[0]]></value>
+    </outcomeVariable>
+  </testResult>
+  <itemResult identifier="item-5" datestamp="2021-08-06T21:43:57.077" sessionStatus="final">
+    <responseVariable identifier="numAttempts" cardinality="single" baseType="integer">
+      <candidateResponse>
+        <value><![CDATA[1]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <responseVariable identifier="duration" cardinality="single" baseType="duration">
+      <candidateResponse>
+        <value><![CDATA[PT4.470704S]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <outcomeVariable identifier="completionStatus" cardinality="single" baseType="identifier">
+      <value><![CDATA[completed]]></value>
+    </outcomeVariable>
+    <outcomeVariable identifier="SCORE" cardinality="single" baseType="float">
+      <value><![CDATA[1]]></value>
+    </outcomeVariable>
+    <responseVariable identifier="file-upload" cardinality="single" baseType="identifier">
+      <candidateResponse>
+        <value><![CDATA[yes]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <responseVariable identifier="sample" cardinality="single" baseType="file">
+      <candidateResponse>
+        <value><![CDATA[application/x-empty,base64,]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <candidateComment/>
+  </itemResult>
+  <itemResult identifier="item-1" datestamp="2021-08-06T21:42:41.776" sessionStatus="final">
+    <responseVariable identifier="numAttempts" cardinality="single" baseType="integer">
+      <candidateResponse>
+        <value><![CDATA[1]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <responseVariable identifier="duration" cardinality="single" baseType="duration">
+      <candidateResponse>
+        <value><![CDATA[PT1M21.063567S]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <outcomeVariable identifier="completionStatus" cardinality="single" baseType="identifier">
+      <value><![CDATA[completed]]></value>
+    </outcomeVariable>
+    <responseVariable identifier="RESPONSE" cardinality="single" baseType="string">
+      <candidateResponse>
+        <value><![CDATA[{"screen":{"width":1920,"height":1080,"aspectRatio":"16:9","orientation":"landscape"},"tao":{"version":"3.4.0-sprint138","testRunner":"currentGen"},"browser":{"name":"Chrome","version":"92"},"device":{"vendor,":"unknown","model,":"unknown","type,":"unknown"},"os":{"name":"Windows","version":"10"},"date":"2021-08-06T19:42:05.798Z"}]]></value>
+      </candidateResponse>
+    </responseVariable>
+  </itemResult>
+  <itemResult identifier="item-7" datestamp="2021-08-06T21:44:19.877" sessionStatus="final">
+    <responseVariable identifier="numAttempts" cardinality="single" baseType="integer">
+      <candidateResponse>
+        <value><![CDATA[1]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <responseVariable identifier="duration" cardinality="single" baseType="duration">
+      <candidateResponse>
+        <value><![CDATA[PT3.116258S]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <outcomeVariable identifier="completionStatus" cardinality="single" baseType="identifier">
+      <value><![CDATA[completed]]></value>
+    </outcomeVariable>
+    <outcomeVariable identifier="SCORE" cardinality="single" baseType="float">
+      <value><![CDATA[1]]></value>
+    </outcomeVariable>
+    <responseVariable identifier="graphic-associate" cardinality="single" baseType="identifier">
+      <candidateResponse>
+        <value><![CDATA[yes]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <candidateComment/>
+    <responseVariable identifier="sample" cardinality="multiple" baseType="pair">
+      <candidateResponse>
+        <value><![CDATA[]]></value>
+      </candidateResponse>
+    </responseVariable>
+  </itemResult>
+  <itemResult identifier="item-10" datestamp="2021-08-06T21:44:13.413" sessionStatus="final">
+    <responseVariable identifier="numAttempts" cardinality="single" baseType="integer">
+      <candidateResponse>
+        <value><![CDATA[1]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <responseVariable identifier="duration" cardinality="single" baseType="duration">
+      <candidateResponse>
+        <value><![CDATA[PT5.439153S]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <outcomeVariable identifier="completionStatus" cardinality="single" baseType="identifier">
+      <value><![CDATA[completed]]></value>
+    </outcomeVariable>
+    <outcomeVariable identifier="SCORE" cardinality="single" baseType="float">
+      <value><![CDATA[0]]></value>
+    </outcomeVariable>
+    <responseVariable identifier="hotspot" cardinality="single" baseType="identifier">
+      <candidateResponse>
+        <value><![CDATA[no]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <candidateComment/>
+    <responseVariable identifier="sample" cardinality="multiple" baseType="identifier">
+      <candidateResponse>
+        <value><![CDATA['hotspot_3']]></value>
+      </candidateResponse>
+    </responseVariable>
+  </itemResult>
+  <itemResult identifier="item-8" datestamp="2021-08-06T21:44:37.286" sessionStatus="final">
+    <responseVariable identifier="numAttempts" cardinality="single" baseType="integer">
+      <candidateResponse>
+        <value><![CDATA[1]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <responseVariable identifier="duration" cardinality="single" baseType="duration">
+      <candidateResponse>
+        <value><![CDATA[PT17.185534S]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <outcomeVariable identifier="completionStatus" cardinality="single" baseType="identifier">
+      <value><![CDATA[completed]]></value>
+    </outcomeVariable>
+    <outcomeVariable identifier="SCORE" cardinality="single" baseType="float">
+      <value><![CDATA[0]]></value>
+    </outcomeVariable>
+    <responseVariable identifier="graphic-gap-match" cardinality="single" baseType="identifier">
+      <candidateResponse>
+        <value><![CDATA[no]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <candidateComment>Gartenzwerg</candidateComment>
+    <responseVariable identifier="sample" cardinality="multiple" baseType="directedPair">
+      <candidateResponse>
+        <value><![CDATA[gapimg_3 associablehotspot_1]]></value>
+        <value><![CDATA[ gapimg_4 associablehotspot_2]]></value>
+      </candidateResponse>
+    </responseVariable>
+  </itemResult>
+  <itemResult identifier="item-4" datestamp="2021-08-06T21:43:52.367" sessionStatus="final">
+    <responseVariable identifier="numAttempts" cardinality="single" baseType="integer">
+      <candidateResponse>
+        <value><![CDATA[1]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <responseVariable identifier="duration" cardinality="single" baseType="duration">
+      <candidateResponse>
+        <value><![CDATA[PT2.712380S]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <outcomeVariable identifier="completionStatus" cardinality="single" baseType="identifier">
+      <value><![CDATA[completed]]></value>
+    </outcomeVariable>
+    <outcomeVariable identifier="SCORE" cardinality="single" baseType="float">
+      <value><![CDATA[1]]></value>
+    </outcomeVariable>
+    <responseVariable identifier="extended-text" cardinality="single" baseType="identifier">
+      <candidateResponse>
+        <value><![CDATA[yes]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <responseVariable identifier="sample" cardinality="single" baseType="string">
+      <candidateResponse>
+        <value><![CDATA[]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <candidateComment/>
+  </itemResult>
+  <itemResult identifier="item-6" datestamp="2021-08-06T21:43:46.372" sessionStatus="final">
+    <responseVariable identifier="numAttempts" cardinality="single" baseType="integer">
+      <candidateResponse>
+        <value><![CDATA[1]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <responseVariable identifier="duration" cardinality="single" baseType="duration">
+      <candidateResponse>
+        <value><![CDATA[PT3.476504S]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <outcomeVariable identifier="completionStatus" cardinality="single" baseType="identifier">
+      <value><![CDATA[completed]]></value>
+    </outcomeVariable>
+    <outcomeVariable identifier="SCORE" cardinality="single" baseType="float">
+      <value><![CDATA[0]]></value>
+    </outcomeVariable>
+    <responseVariable identifier="gap-match" cardinality="single" baseType="identifier">
+      <candidateResponse>
+        <value><![CDATA[no]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <responseVariable identifier="sample" cardinality="multiple" baseType="directedPair">
+      <candidateResponse>
+        <value><![CDATA[]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <candidateComment/>
+  </itemResult>
+  <itemResult identifier="item-3" datestamp="2021-08-06T21:43:07.243" sessionStatus="final">
+    <responseVariable identifier="numAttempts" cardinality="single" baseType="integer">
+      <candidateResponse>
+        <value><![CDATA[1]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <responseVariable identifier="duration" cardinality="single" baseType="duration">
+      <candidateResponse>
+        <value><![CDATA[PT25.242793S]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <outcomeVariable identifier="completionStatus" cardinality="single" baseType="identifier">
+      <value><![CDATA[completed]]></value>
+    </outcomeVariable>
+    <outcomeVariable identifier="SCORE" cardinality="single" baseType="float">
+      <value><![CDATA[1]]></value>
+    </outcomeVariable>
+    <responseVariable identifier="choice" cardinality="single" baseType="identifier">
+      <candidateResponse>
+        <value><![CDATA[no]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <responseVariable identifier="sample" cardinality="multiple" baseType="identifier">
+      <candidateResponse>
+        <value><![CDATA['choice_1']]></value>
+        <value><![CDATA[ 'choice_2']]></value>
+        <value><![CDATA[ 'choice_3']]></value>
+      </candidateResponse>
+    </responseVariable>
+    <candidateComment>something went wrong</candidateComment>
+  </itemResult>
+  <itemResult identifier="item-13" datestamp="2021-08-06T21:43:37.644" sessionStatus="final">
+    <responseVariable identifier="numAttempts" cardinality="single" baseType="integer">
+      <candidateResponse>
+        <value><![CDATA[1]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <responseVariable identifier="duration" cardinality="single" baseType="duration">
+      <candidateResponse>
+        <value><![CDATA[PT21.352855S]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <outcomeVariable identifier="completionStatus" cardinality="single" baseType="identifier">
+      <value><![CDATA[completed]]></value>
+    </outcomeVariable>
+    <responseVariable identifier="match-interaction" cardinality="single" baseType="identifier">
+      <candidateResponse>
+        <value><![CDATA[yes]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <responseVariable identifier="sample" cardinality="multiple" baseType="directedPair">
+      <candidateResponse>
+        <value><![CDATA[]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <candidateComment>nothing went wrong</candidateComment>
+  </itemResult>
+  <itemResult identifier="item-14" datestamp="2021-08-06T21:44:01.046" sessionStatus="final">
+    <responseVariable identifier="numAttempts" cardinality="single" baseType="integer">
+      <candidateResponse>
+        <value><![CDATA[1]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <responseVariable identifier="duration" cardinality="single" baseType="duration">
+      <candidateResponse>
+        <value><![CDATA[PT3.747863S]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <outcomeVariable identifier="completionStatus" cardinality="single" baseType="identifier">
+      <value><![CDATA[completed]]></value>
+    </outcomeVariable>
+    <responseVariable identifier="media-interaction" cardinality="single" baseType="identifier">
+      <candidateResponse>
+        <value><![CDATA[yes]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <candidateComment/>
+    <responseVariable identifier="sample-1" cardinality="single" baseType="integer">
+      <candidateResponse>
+        <value><![CDATA[0]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <responseVariable identifier="sample-2" cardinality="single" baseType="integer">
+      <candidateResponse>
+        <value><![CDATA[0]]></value>
+      </candidateResponse>
+    </responseVariable>
+  </itemResult>
+  <itemResult identifier="item-2" datestamp="2021-08-06T21:43:16.059" sessionStatus="final">
+    <responseVariable identifier="numAttempts" cardinality="single" baseType="integer">
+      <candidateResponse>
+        <value><![CDATA[1]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <responseVariable identifier="duration" cardinality="single" baseType="duration">
+      <candidateResponse>
+        <value><![CDATA[PT3.433115S]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <outcomeVariable identifier="completionStatus" cardinality="single" baseType="identifier">
+      <value><![CDATA[completed]]></value>
+    </outcomeVariable>
+    <outcomeVariable identifier="SCORE" cardinality="single" baseType="float">
+      <value><![CDATA[1]]></value>
+    </outcomeVariable>
+    <responseVariable identifier="associate" cardinality="single" baseType="identifier">
+      <candidateResponse>
+        <value><![CDATA[yes]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <responseVariable identifier="sample" cardinality="multiple" baseType="pair">
+      <candidateResponse>
+        <value><![CDATA[]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <candidateComment/>
+  </itemResult>
+  <itemResult identifier="item-9" datestamp="2021-08-06T21:44:16.537" sessionStatus="final">
+    <responseVariable identifier="numAttempts" cardinality="single" baseType="integer">
+      <candidateResponse>
+        <value><![CDATA[1]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <responseVariable identifier="duration" cardinality="single" baseType="duration">
+      <candidateResponse>
+        <value><![CDATA[PT2.900072S]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <outcomeVariable identifier="completionStatus" cardinality="single" baseType="identifier">
+      <value><![CDATA[completed]]></value>
+    </outcomeVariable>
+    <outcomeVariable identifier="SCORE" cardinality="single" baseType="float">
+      <value><![CDATA[1]]></value>
+    </outcomeVariable>
+    <responseVariable identifier="graphic-order" cardinality="single" baseType="identifier">
+      <candidateResponse>
+        <value><![CDATA[yes]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <candidateComment/>
+    <responseVariable identifier="sample" cardinality="ordered" baseType="identifier">
+      <candidateResponse>
+        <value><![CDATA[<>]]></value>
+      </candidateResponse>
+    </responseVariable>
+  </itemResult>
+  <itemResult identifier="item-18" datestamp="2021-08-06T21:44:04.674" sessionStatus="final">
+    <responseVariable identifier="numAttempts" cardinality="single" baseType="integer">
+      <candidateResponse>
+        <value><![CDATA[1]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <responseVariable identifier="duration" cardinality="single" baseType="duration">
+      <candidateResponse>
+        <value><![CDATA[PT3.380127S]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <outcomeVariable identifier="completionStatus" cardinality="single" baseType="identifier">
+      <value><![CDATA[completed]]></value>
+    </outcomeVariable>
+    <outcomeVariable identifier="SCORE" cardinality="single" baseType="float">
+      <value><![CDATA[0]]></value>
+    </outcomeVariable>
+    <responseVariable identifier="text-entry" cardinality="single" baseType="identifier">
+      <candidateResponse>
+        <value><![CDATA[no]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <candidateComment/>
+    <responseVariable identifier="sample" cardinality="single" baseType="string">
+      <candidateResponse>
+        <value><![CDATA[]]></value>
+      </candidateResponse>
+    </responseVariable>
+  </itemResult>
+  <itemResult identifier="item-17" datestamp="2021-08-06T21:43:49.458" sessionStatus="final">
+    <responseVariable identifier="numAttempts" cardinality="single" baseType="integer">
+      <candidateResponse>
+        <value><![CDATA[1]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <responseVariable identifier="duration" cardinality="single" baseType="duration">
+      <candidateResponse>
+        <value><![CDATA[PT2.877596S]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <outcomeVariable identifier="completionStatus" cardinality="single" baseType="identifier">
+      <value><![CDATA[completed]]></value>
+    </outcomeVariable>
+    <outcomeVariable identifier="SCORE" cardinality="single" baseType="float">
+      <value><![CDATA[0]]></value>
+    </outcomeVariable>
+    <responseVariable identifier="slider" cardinality="single" baseType="identifier">
+      <candidateResponse>
+        <value><![CDATA[no]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <responseVariable identifier="sample" cardinality="single" baseType="integer">
+      <candidateResponse>
+        <value><![CDATA[0]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <candidateComment/>
+  </itemResult>
+  <itemResult identifier="item-12" datestamp="2021-08-06T21:44:07.754" sessionStatus="final">
+    <responseVariable identifier="numAttempts" cardinality="single" baseType="integer">
+      <candidateResponse>
+        <value><![CDATA[1]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <responseVariable identifier="duration" cardinality="single" baseType="duration">
+      <candidateResponse>
+        <value><![CDATA[PT2.840151S]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <outcomeVariable identifier="completionStatus" cardinality="single" baseType="identifier">
+      <value><![CDATA[completed]]></value>
+    </outcomeVariable>
+    <responseVariable identifier="inline-choice-interaction" cardinality="single" baseType="identifier">
+      <candidateResponse>
+        <value><![CDATA[yes]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <candidateComment/>
+    <responseVariable identifier="sample" cardinality="single" baseType="identifier">
+      <candidateResponse>
+        <value><![CDATA[]]></value>
+      </candidateResponse>
+    </responseVariable>
+  </itemResult>
+  <itemResult identifier="item-11" datestamp="2021-08-06T21:43:42.687" sessionStatus="final">
+    <responseVariable identifier="numAttempts" cardinality="single" baseType="integer">
+      <candidateResponse>
+        <value><![CDATA[1]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <responseVariable identifier="duration" cardinality="single" baseType="duration">
+      <candidateResponse>
+        <value><![CDATA[PT4.794884S]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <outcomeVariable identifier="completionStatus" cardinality="single" baseType="identifier">
+      <value><![CDATA[completed]]></value>
+    </outcomeVariable>
+    <responseVariable identifier="hottext" cardinality="single" baseType="identifier">
+      <candidateResponse>
+        <value><![CDATA[yes]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <responseVariable identifier="sample" cardinality="multiple" baseType="identifier">
+      <candidateResponse>
+        <value><![CDATA[]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <responseVariable identifier="RESPONSE" cardinality="single" baseType="string">
+      <candidateResponse>
+        <value><![CDATA[]]></value>
+      </candidateResponse>
+    </responseVariable>
+  </itemResult>
+  <itemResult identifier="item-16" datestamp="2021-08-06T21:44:43.007" sessionStatus="final">
+    <responseVariable identifier="numAttempts" cardinality="single" baseType="integer">
+      <candidateResponse>
+        <value><![CDATA[1]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <responseVariable identifier="duration" cardinality="single" baseType="duration">
+      <candidateResponse>
+        <value><![CDATA[PT5.472242S]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <outcomeVariable identifier="completionStatus" cardinality="single" baseType="identifier">
+      <value><![CDATA[completed]]></value>
+    </outcomeVariable>
+    <outcomeVariable identifier="SCORE" cardinality="single" baseType="float">
+      <value><![CDATA[1]]></value>
+    </outcomeVariable>
+    <responseVariable identifier="select-point" cardinality="single" baseType="identifier">
+      <candidateResponse>
+        <value><![CDATA[yes]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <candidateComment/>
+    <responseVariable identifier="sample" cardinality="multiple" baseType="point">
+      <candidateResponse>
+        <value><![CDATA[435 218]]></value>
+      </candidateResponse>
+    </responseVariable>
+  </itemResult>
+  <itemResult identifier="item-15" datestamp="2021-08-06T21:43:12.368" sessionStatus="final">
+    <responseVariable identifier="numAttempts" cardinality="single" baseType="integer">
+      <candidateResponse>
+        <value><![CDATA[1]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <responseVariable identifier="duration" cardinality="single" baseType="duration">
+      <candidateResponse>
+        <value><![CDATA[PT4.886143S]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <outcomeVariable identifier="completionStatus" cardinality="single" baseType="identifier">
+      <value><![CDATA[completed]]></value>
+    </outcomeVariable>
+    <responseVariable identifier="order" cardinality="single" baseType="identifier">
+      <candidateResponse>
+        <value><![CDATA[yes]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <responseVariable identifier="sample" cardinality="ordered" baseType="identifier">
+      <candidateResponse>
+        <value><![CDATA[<>]]></value>
+      </candidateResponse>
+    </responseVariable>
+    <candidateComment/>
+  </itemResult>
+</assessmentResult>
