@@ -1,4 +1,4 @@
-import env from './modules/env.js';
+import env from './env.js';
 
 const getDataField = () => {
     return document.querySelector('textarea');

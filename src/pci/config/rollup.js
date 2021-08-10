@@ -5,8 +5,8 @@ import cleanup from 'rollup-plugin-cleanup';
 export default [{
 	input: 'src/pci/js/index.js',
 	output: {
-		file: 'pci/js/environment.js',
-		format: 'iife'
+		file: 'src/pci/runtime/js/rollup-renderer.amd.js',
+		format: 'amd'
 	},
 	plugins: [
 		resolve(),

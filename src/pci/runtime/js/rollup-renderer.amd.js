@@ -1,5 +1,4 @@
-(function () {
-    'use strict';
+define(function () { 'use strict';
 
     const gcd = (a, b) => {
         a = Math.round(a);
@@ -24,6 +23,30 @@
         getScreenHeight,
         getOrientation,
         getAspectRatio
+    };
+
+    const getSetup = () => {
+        document.querySelector('.test-runner-scope');
+        const version = (() => {
+            return document.querySelector('.tao-version').textContent;
+        })();
+        const testRunner = (() => {
+            const itemElem = document.querySelector('.qti-item');
+            if(itemElem && itemElem.className.split(' ').some(entry => entry.trim().startsWith('svelte'))) {
+                return 'Solar';
+            }
+            if(itemElem && itemElem.className.split(' ').some(entry => entry.trim().startsWith('tao-scope'))) {
+                return 'Terre';
+            }
+            return 'nonTao'
+        })();
+        return {
+            version,
+            testRunner
+        }
+    };
+    var tao = {
+        getSetup
     };
 
     var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
@@ -700,30 +723,6 @@
     }(uaParser$1, uaParser$1.exports));
     var uaParser = uaParser$1.exports;
 
-    const getSetup = () => {
-        document.querySelector('.test-runner-scope');
-        const version = (() => {
-            return document.querySelector('.tao-version').textContent;
-        })();
-        const testRunner = (() => {
-            const itemElem = document.querySelector('.qti-item');
-            if(itemElem && itemElem.className.split(' ').some(entry => entry.trim().startsWith('svelte'))) {
-                return 'Solar';
-            }
-            if(itemElem && itemElem.className.split(' ').some(entry => entry.trim().startsWith('tao-scope'))) {
-                return 'Terre';
-            }
-            return 'nonTao'
-        })();
-        return {
-            version,
-            testRunner
-        }
-    };
-    var tao = {
-        getSetup
-    };
-
     const getEnv = () => {
         const uaData = uaParser(navigator.userAgent);
         Object.keys(uaData.device).map(key => {
@@ -767,4 +766,4 @@
     window.addEventListener('orientationchange', setData);
     setData();
 
-}());
+});

@@ -1,6 +1,6 @@
 import screen from './screen.js';
-import uaParser from 'ua-parser-js';
 import tao from './tao.js';
+import uaParser from 'ua-parser-js';
 
 /**
  * Retrieve information about the current environment

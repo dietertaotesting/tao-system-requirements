@@ -1,0 +1,36 @@
+{
+    "typeIdentifier": "taoenvinfo",
+    "label": "TAO_Environment_Information",
+    "short": "TAO Env Info",
+    "description": "This interaction collects data about the TAO environment, viewport and scren size.",
+    "version": "1.0.0",
+    "author": "Dieter Raber",
+    "email": "dieter@taotesting.com",
+    "tags": [],
+    "response":
+    {
+        "baseType": "string",
+        "cardinality": "single"
+    },
+    "runtime":
+    {
+        "hook": "./runtime/taoenvinfo.amd.js",
+        "libraries": [
+            "./runtime/js/renderer.js"
+        ],
+        "stylesheets": [],
+        "mediaFiles": []
+    },
+    "creator":
+    {
+        "icon": "./creator/img/icon.svg",
+        "hook": "./pciCreator.js",
+        "libraries": [
+            "./creator/tpl/markup.tpl",
+            "./creator/tpl/propertiesForm.tpl",
+            "./creator/widget/Widget.js",
+            "./creator/widget/states/Question.js",
+            "./creator/widget/states/states.js"
+        ]
+    }
+}
