@@ -3,8 +3,8 @@
 
 <head>
   <meta charset="utf-8">
-  <title>TAO release {{ version }} - System requirements</title>
-  <meta name="description" content="System requirements for TAO release {{ version }}">
+  <title>TAO release {{ release }} - System requirements</title>
+  <meta name="description" content="System requirements for TAO release {{ release }}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,7 @@
 
 <body class="sr-wrapper">
   <header>
-    <h1>System requirements for TAO {{ version }}</h1>
+    <h1>System requirements for TAO {{ release }}</h1>
   </header>
   <main>
     <section>
@@ -63,7 +63,7 @@
       </ul>
     </section>
     <section>
-      <h2>Docker</h2>
+      <h2>Docker Image</h2>
       <p>When you are using TAO as a container image</p>
       <ul class="container">
         {{#each server.virtualized.container}}
@@ -79,7 +79,7 @@
       <h3>Tests we performed on mobile screens</h3>
       <div class="viewports-devices">
         {{#each viewportDevices}}
-        <details>
+        <details open>
           <summary>{{this.env.label}}</summary>
           <table>
             <colgroup>
@@ -94,7 +94,7 @@
             <tbody>
               <tr>
                 <th>TAO</th>
-                <td>{{this.env.tao.version}} / {{this.env.tao.testRunner}}</td>
+                <td>{{this.env.tao.release}} / {{this.env.tao.testRunner}}</td>
               </tr>
               {{#if this.env.deviceStr}}
               <tr>

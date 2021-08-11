@@ -13,9 +13,11 @@
     "browserslist": "^4.16.7",
     "compare-versions": "^3.6.0",
     "datauri": "^3.0.0",
+    "date-and-time": "^1.0.1",
     "eslint": "^7.32.0",
     "fast-xml-parser": "^3.19.0",
     "fs-extra": "^9.1.0",
+    "git-commit-info": "^2.0.0",
     "handlebars": "^4.7.7",
     "lodash": "^4.17.21",
     "prompts": "^2.4.1",
@@ -25,10 +27,8 @@
     "ua-parser-js": "^0.7.28"
   },
   "scripts": {
-    "build": "node --experimental-json-modules ./src/builders/build",
-    "update": "npm run update:browsers & npm run update:versions",
-    "update:versions": "node --experimental-json-modules ./src/updater/updater.js",
-    "update:browsers": "npx browserslist@latest --update-db",
+    "build": "node --no-warnings --experimental-json-modules ./src/builders/build",
+    "update": "npx browserslist@latest --update-db & node --no-warnings --experimental-json-modules ./src/builders/browser-post-process.js & node --no-warnings --experimental-json-modules ./src/builders/updater.js",
     "pci:build": "rollup -c ./src/pci/config/rollup.js"
   },
   "browserslist": [

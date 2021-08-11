@@ -38,23 +38,12 @@ git clone https://github.com/oat-sa/tao-system-requirements.git
 git checkout develop
 ```
 
-#### Updating the browser database
-```bash
-npm run update:browsers
-```
+#### Updating the browser database and the versions of TAO, Server, Database or Docker
 
-#### Updating the versions of TAO, Server, Database or Docker
-```bash
-npm run update:versions
-```
-
-Alternatively you can edit `/data/*.json` manually, for instance if you want to add or remove a component.
-
-#### Updating all of the above at once
-For your convenience, `npm run update` combines the two tasks above.
 ```bash
 npm run update
 ```
+Edit `/data/server.json` manually in case to add or remove a component. 
 
 #### Updating viewports and devices
 1. Download the [TAO Standard Viewport and Device Test](assets/test/tao-vd-test.zip). 
@@ -70,7 +59,7 @@ git push origin develop
 ``` 
 
 #### Rebuild the website and the APIs
-Once everything is up-to-date you need to rebuild the website and the APIs and update the repository.
+Once everything is up-to-date you need to rebuild the website and the APIs and update the repository. If you aren't sure if all data are at the right version, don't worry - the build will then halt and show a comprehensive status report.
 
 ```bash
 npm run build

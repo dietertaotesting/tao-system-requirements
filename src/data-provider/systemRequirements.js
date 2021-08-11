@@ -1,17 +1,30 @@
-import getBrowserData from "./browser.js"; 
-import getServerData from "./server.js";
-import getViewportDeviceData from "./viewport-devices.js";
-import getRelease from "./tao-release.js";
+import browser from "./browser.js";
+import server from "./server.js";
+import viewportDevices from "./viewport-devices.js";
+import release from "./tao-release.js";
+import api from "./api.js";
 
-const get = () => {
+const getData = () => {
     return {
-        browsers: getBrowserData(),
-        viewportDevices: getViewportDeviceData(),
-        server: getServerData(),
-        version: getRelease()
+        browsers: browser.getData(),
+        viewportDevices: viewportDevices.getData(),
+        server: server.getData(),
+        release: release.getData(),
+        api: api.getData()
+    }
+}
+
+const getMetaData = () => {
+    return {
+        api: api.getMetaData(),
+        release: release.getMetaData(),
+        viewportDevices: viewportDevices.getMetaData(),
+        server: server.getMetaData(),
+        browsers: browser.getMetaData()
     }
 }
 
 export default {
-    get
+    getMetaData,
+    getData
 }

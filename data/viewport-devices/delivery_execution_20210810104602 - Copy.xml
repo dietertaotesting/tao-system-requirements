@@ -361,7 +361,7 @@
     </outcomeVariable>
     <responseVariable identifier="RESPONSE" cardinality="single" baseType="string">
       <candidateResponse>
-        <value><![CDATA[{"screen":{"width":1920,"height":1080,"aspectRatio":"16:9","orientation":"landscape"},"tao":{"version":"3.4.0-sprint138","testRunner":"currentGen"},"browser":{"name":"Chrome","version":"92"},"device":{"vendor,":"unknown","model,":"unknown","type,":"unknown"},"os":{"name":"Windows","version":"10"},"date":"2021-08-06T09:34:28.854Z"}]]></value>
+        <value><![CDATA[{"screen":{"width":1920,"height":1080,"aspectRatio":"16:9","orientation":"landscape"},"tao":{"release":"3.4.1","testRunner":"Terre"},"browser":{"name":"Chrome","version":"92"},"device":{"vendor,":"","model,":"","type,":""},"os":{"name":"Windows","version":"10"},"date":"2021-08-06T09:34:28.854Z"}]]></value>
       </candidateResponse>
     </responseVariable>
   </itemResult>
@@ -418,7 +418,7 @@
         <value><![CDATA[]]></value>
       </candidateResponse>
     </responseVariable>
-    <candidateComment>{"screen":{"width":1920,"height":1080,"aspectRatio":"16:9","orientation":"landscape"},"tao":{"version":"3.4.0-sprint138","testRunner":"currentGen"},"browser":{"name":"Chrome","version":"92"},"device":{"vendor,":"unknown","model,":"unknown","type,":"unknown"},"os":{"name":"Windows","version":"10"},"date":"2021-08-06T09:34:17.860Z"}</candidateComment>
+    <candidateComment>{"screen":{"width":1920,"height":1080,"aspectRatio":"16:9","orientation":"landscape"},"tao":{"release":"3.4.1","testRunner":"Terre"},"browser":{"name":"Chrome","version":"92"},"device":{"vendor,":"","model,":"","type,":""},"os":{"name":"Windows","version":"10"},"date":"2021-08-06T09:34:17.860Z"}</candidateComment>
   </itemResult>
   <itemResult identifier="item-3" datestamp="2021-08-06T11:34:50.076" sessionStatus="final">
     <responseVariable identifier="numAttempts" cardinality="single" baseType="integer">

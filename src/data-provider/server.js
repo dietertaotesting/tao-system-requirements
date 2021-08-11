@@ -1,12 +1,30 @@
 import fs from 'fs-extra';
 import paths from '../config/paths.json';
+import gitCommitInfo from "git-commit-info";
+
+const getMetaData = () => {
+    const path = `${paths.data.in}/server.json`;
+    const data = fs.readJsonSync(path);
+    const commitInfo = gitCommitInfo(paths.data.in);
+    const stats = fs.statSync(path);
+
+    return [
+        {
+            path,
+            release: data.release,
+            lastMod: new Date(stats.mtime),
+            lastCommit: new Date(commitInfo.date)
+        }
+    ]
+}
 
 /**
  * Fetch and return data from 
  * @returns {{stack: {database: {}, server: {}, language: {}}, virtualized: {container: {}}}}
  */
-const getServerData = () => {
+const getData = () => {
     const data = fs.readJsonSync(`${paths.data.in}/server.json`);
+    delete data.release;
     [
         data.stack.server,
         data.stack.database,
@@ -22,4 +40,7 @@ const getServerData = () => {
     return data;
 }
 
-export default getServerData;
+export default {
+    getData,
+    getMetaData
+}

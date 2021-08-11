@@ -1,25 +1,47 @@
 import fs from 'fs-extra';
-import getRelease from './tao-release.js';
+import release from './tao-release.js';
 import paths from '../config/paths.json';
 import parser from 'fast-xml-parser';
 import _ from 'lodash';
+import gitCommitInfo from "git-commit-info";
 
-
-const getResultXml = () => {
+const getMetaData = () => {
     const data = [];
-    for (let file of fs.readdirSync(`${paths.data.in}/viewport-devices`)) {
-        let path = `${paths.data.in}/viewport-devices/${file}`
-        let xml = fs.readFileSync(path, 'utf8');
-        if (xml.includes(`"tao":{"version":"${getRelease()}"`)) {
-            data.push(xml);
+    const vpPath = `${paths.data.in}/viewport-devices`;
+    const commitInfo = gitCommitInfo(vpPath);
+    for (let file of fs.readdirSync(vpPath)) {
+        let path = `${vpPath}/${file}`;
+        const stats = fs.statSync(path);
+        const match = fs.readFileSync(path, 'utf8').match(/"tao":{"release":"(?<release>[^"]+)"/);
+        if (!match) {
+            fs.unlink(path);
+            continue;
         }
+        data.push({
+            path,
+            release: match.groups.release,
+            lastMod: new Date(stats.mtime),
+            lastCommit: new Date(commitInfo.date)
+        })
     }
     return data;
 }
 
 
+const getResultXml = () => {
+    const currentRelease = release.getData();
+    const data = [];
+    getMetaData().forEach(fileData => {
+        if(fileData.release === currentRelease){
+            data.push(fs.readFileSync(fileData.path, 'utf8')) 
+        }
+    })
+    return data;
+}
 
-const getViewportDeviceData = () => {
+
+
+const getData = () => {
     let data = new Set();
 
     getResultXml().forEach((xml, i) => {
@@ -53,8 +75,8 @@ const getViewportDeviceData = () => {
             return eEntry.response.startsWith('{');
         });
         env = JSON.parse(env.response);
-        env.key = `${env.screen.width}-${env.screen.height}-${env.screen.orientation}`; 
-        env.deviceStr = Object.values(env.device).join(' ').trim();        
+        env.key = `${env.screen.width}-${env.screen.height}-${env.screen.orientation}`;
+        env.deviceStr = Object.values(env.device).join(' ').trim();
         env.label = `${env.screen.width} × ${env.screen.height}`;
 
         currData = currData.filter(entry => !entry.response.startsWith('{'));
@@ -67,15 +89,15 @@ const getViewportDeviceData = () => {
         data.add({
             env,
             interactions: currData
-        })        
+        })
     });
     data = Array.from(data);
     data.sort((a, b) => {
         if (a.env.screen.width < b.env.screen.width) {
-          return -1;
+            return -1;
         }
         if (a.env.screen.width > b.env.screen.width) {
-          return 1;
+            return 1;
         }
         return 0;
     })
@@ -83,4 +105,7 @@ const getViewportDeviceData = () => {
 
 }
 
-export default getViewportDeviceData;
+export default {
+    getData,
+    getMetaData
+}

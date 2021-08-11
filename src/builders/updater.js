@@ -4,9 +4,10 @@ import paths from '../config/paths.json';
 import _ from 'lodash';
 import logger from '../modules/logger.js';
 
-// it is important to use the raw data rather then those already treated by getServerData() | getRelease()!
+
+// it is important to use the raw data rather then those already treated by getServerData() | release.getData()!
 const releasePath = `${paths.data.in}/tao-release.json`;
-let releaseData = fs.readJSONSync(releasePath, 'utf8');
+let release = fs.readJSONSync(releasePath, 'utf8');
 
 const serverPath = `${paths.data.in}/server.json`;
 let serverData = fs.readJSONSync(serverPath, 'utf8');
@@ -16,8 +17,9 @@ const buildQuestions = () => {
         type: 'text',
         name: 'taoRelease',
         message: 'TAO Release'.padEnd(15),
-        initial: releaseData
+        initial: release
     }];
+    delete(serverData.release);
     for (let [type, typeValues] of Object.entries(serverData)) {
         for (let [component, componentValues] of Object.entries(typeValues)) {
             componentValues.forEach(value => {
@@ -34,21 +36,29 @@ const buildQuestions = () => {
 }
 
 const process = response => {
-    releaseData = response.taoRelease;
-    delete(response.taoRelease);
-    for (let [keys, versions] of Object.entries(response)) {
-        keys = keys.split('.');
-        const label = keys.pop();
-        serverData[keys[0]][keys[1]].forEach(entry => {
-            if (entry.label === label) {
-                entry.versions = versions.split(',');
-            }
+    try {
+        const release = response.taoRelease;
+        delete(response.taoRelease);
+        
+        for (let [keys, versions] of Object.entries(response)) {
+            keys = keys.split('.');
+            const label = keys.pop();
+            serverData[keys[0]][keys[1]].forEach(entry => {
+                if (entry.label === label) {
+                    entry.versions = versions.split(',');
+                }
+            });
+        }
+        serverData.release = release; // record at the time of creation
+        fs.writeJsonSync(releasePath, release);
+        fs.writeJsonSync(serverPath, serverData, {
+            spaces: '\t'
         });
+        logger.success(`Finished updating data for release ${release}.`);
     }
-    fs.writeJsonSync(releasePath, releaseData);
-    fs.writeJsonSync(serverPath, serverData, {
-        spaces: '\t'
-    });
+    catch(e) {
+        logger.error(`Process failed with message "${e}"`);
+    }
 }
 
 const update = async () => {

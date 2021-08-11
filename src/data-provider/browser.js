@@ -1,5 +1,7 @@
 import browserslist from 'browserslist';
 import oatBrowserListConfig from '@oat-sa/browserslist-config-tao';
+import fs from 'fs-extra';
+import paths from '../config/paths.json';
 
 /**
  * Vocabulary to expand short codes for browsers and OSs to human readable names
@@ -31,7 +33,7 @@ const format = browser => {
         os: data[1] || '',
         versions: [browser.split(' ')[1]],
         device: device
-    }    
+    }
     entry.label = entry.os ? entry.browser + '/' + entry.os : entry.browser;
     entry.versionStr = entry.versions.join(', ');
     entry.key = entry.label.toLowerCase().replace(/\W+/g, '-');
@@ -42,7 +44,7 @@ const format = browser => {
  * Convert browser data to an array
  * order: desktop -> mobile, then alphabetically, then version
  */
-function getBrowserData () {
+function getData() {
     const listing = {
         desktop: {},
         mobile: {}
@@ -58,19 +60,30 @@ function getBrowserData () {
 
         return listing;
     }, {});
-    for(let device in listing){
-        for(let values of Object.values(listing[device])) {
+    for (let device in listing) {
+        for (let values of Object.values(listing[device])) {
             values.versions.sort();
         }
         Object.keys(listing[device]).sort().reduce(
             (obj, key) => {
-              obj[key] = listing[device][key];
-              return obj;
-            },
-            {}
-          );
+                obj[key] = listing[device][key];
+                return obj;
+            }, {}
+        );
     }
     return Object.values(listing['desktop']).concat(Object.values(listing['mobile']));
 }
 
-export default getBrowserData;
+const getMetaData = () => {
+    const data = fs.readJsonSync(`${paths.data.in}/browser-meta.json`);
+    data.lastMod = new Date(data.lastMod);
+    data.lastCommit = new Date(data.lastCommit);
+    return [
+        data
+    ]
+}
+
+export default {
+    getData,
+    getMetaData
+}

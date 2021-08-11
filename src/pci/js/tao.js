@@ -5,7 +5,7 @@ const getSetup = () => {
     /**
      * What is the version that has been tested?
      */
-    const version = (() => {
+    const release = (() => {
         return document.querySelector('.tao-version').textContent;
     })();
 
@@ -25,7 +25,7 @@ const getSetup = () => {
 
 
     return {
-        version,
+        release,
         testRunner
     }
 }
