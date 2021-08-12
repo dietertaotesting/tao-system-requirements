@@ -1,20 +1,16 @@
-
-/*
-Build by Wiquid's PCI Generator for TAO platform Free to use 
- */
 define([
     'taoQtiItem/qtiCreator/widgets/states/factory',
     'taoQtiItem/qtiCreator/widgets/interactions/states/Question',
     'taoQtiItem/qtiCreator/widgets/helpers/formElement',
     'taoQtiItem/qtiCreator/editor/simpleContentEditableElement',
     'taoQtiItem/qtiCreator/editor/containerEditor',
-    'tpl!taoenvinfo/creator/tpl/propertiesForm',
+    'tpl!taoEnvInteraction/creator/tpl/propertiesForm',
     'lodash',
     'jquery'
 ], function(stateFactory, Question, formElement, simpleEditor, containerEditor, formTpl, _, $){
     'use strict';
 
-    var taoenvinfoStateQuestion = stateFactory.extend(Question, function(){
+    var taoEnvInteractionStateQuestion = stateFactory.extend(Question, function(){
 
         var Scontainer = this.widget.$container,
             Sprompt = Scontainer.find('.prompt'),
@@ -47,7 +43,7 @@ define([
         containerEditor.destroy(Sprompt);
     });
 
-     taoenvinfoStateQuestion.prototype.initForm = function(){
+     taoEnvInteractionStateQuestion.prototype.initForm = function(){
 
         var _widget = this.widget,
             Sform = _widget.$form,
@@ -93,5 +89,5 @@ define([
 
     };
 
-    return  taoenvinfoStateQuestion;
+    return  taoEnvInteractionStateQuestion;
 });

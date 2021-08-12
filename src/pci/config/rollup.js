@@ -3,9 +3,9 @@ import commonjs from '@rollup/plugin-commonjs';
 import cleanup from 'rollup-plugin-cleanup';
 
 export default [{
-	input: 'src/pci/js/index.js',
+	input: 'src/pci/information-gatherer-esm/env.js',
 	output: {
-		file: 'src/pci/runtime/js/rollup-renderer.amd.js',
+		file: 'src/pci/taoEnvInteraction/runtime/information-gatherer.js',
 		format: 'amd'
 	},
 	plugins: [

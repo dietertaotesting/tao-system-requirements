@@ -27,7 +27,7 @@ define(function () { 'use strict';
 
     const getSetup = () => {
         document.querySelector('.test-runner-scope');
-        const version = (() => {
+        const release = (() => {
             return document.querySelector('.tao-version').textContent;
         })();
         const testRunner = (() => {
@@ -41,7 +41,7 @@ define(function () { 'use strict';
             return 'nonTao'
         })();
         return {
-            version,
+            release,
             testRunner
         }
     };
@@ -757,13 +757,6 @@ define(function () { 'use strict';
         getEnv
     };
 
-    const getDataField = () => {
-        return document.querySelector('textarea');
-    };
-    const setData = () => {
-        getDataField().value = JSON.stringify(env.getEnv());
-    };
-    window.addEventListener('orientationchange', setData);
-    setData();
+    return env;
 
 });

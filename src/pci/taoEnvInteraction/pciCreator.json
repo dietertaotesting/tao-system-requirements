@@ -1,12 +1,14 @@
 {
-    "typeIdentifier": "taoenvinfo",
-    "label": "TAO_Environment_Information",
+    "typeIdentifier": "taoEnvInteraction",
+    "label": "TAO Environment Information",
     "short": "TAO Env Info",
-    "description": "This interaction collects data about the TAO environment, viewport and scren size.",
+    "description": "Collects data about the TAO environment, viewport and screen size.",
     "version": "1.0.0",
     "author": "Dieter Raber",
     "email": "dieter@taotesting.com",
-    "tags": [],
+    "tags": [
+        ""
+    ],
     "response":
     {
         "baseType": "string",
@@ -14,9 +16,9 @@
     },
     "runtime":
     {
-        "hook": "./runtime/taoenvinfo.amd.js",
+        "hook": "./runtime/taoEnvInteraction.js",
         "libraries": [
-            "./runtime/js/renderer.js"
+            "./runtime/js/taoEnvInteraction.js"
         ],
         "stylesheets": [],
         "mediaFiles": []
