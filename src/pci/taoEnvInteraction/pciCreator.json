@@ -4,10 +4,9 @@
     "short": "TAO Env Info",
     "description": "Collects data about the TAO environment, viewport and screen size.",
     "version": "1.0.0",
-    "author": "Dieter Raber",
-    "email": "dieter@taotesting.com",
+    "author": "",
+    "email": "",
     "tags": [
-        ""
     ],
     "response":
     {
@@ -16,9 +15,8 @@
     },
     "runtime":
     {
-        "hook": "./runtime/taoEnvInteraction.js",
+        "hook": "",
         "libraries": [
-            "./runtime/js/taoEnvInteraction.js"
         ],
         "stylesheets": [],
         "mediaFiles": []

@@ -32,13 +32,17 @@ define(function () { 'use strict';
         })();
         const testRunner = (() => {
             const itemElem = document.querySelector('.qti-item');
-            if(itemElem && itemElem.className.split(' ').some(entry => entry.trim().startsWith('svelte'))) {
+            if(!itemElem){
+                return 'Non-TAO'
+            }
+            const classes = Array.from(itemElem.classList);
+            if(classes.some(entry => entry.startsWith('svelte'))) {
                 return 'Solar';
             }
-            if(itemElem && itemElem.className.split(' ').some(entry => entry.trim().startsWith('tao-scope'))) {
+            if(classes.some(entry => entry.startsWith('tao-scope'))) {
                 return 'Terre';
             }
-            return 'nonTao'
+            return 'Non-TAO'
         })();
         return {
             release,
