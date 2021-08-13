@@ -46,7 +46,9 @@ npm run update
 Edit `/data/server.json` manually in case to add or remove a component. 
 
 #### Updating viewports and devices
-<p style="color:firebrick">Danger Zone: The test below is still incomplete, the PCI which is the cruical part is still missing. See /src/pci/developer-readme.md for more info!</p>
+
+** Danger Zone: The test below is still incomplete, the PCI which is the cruical part is still missing. See /src/pci/developer-readme.md for more info! **
+
 1. Download the [TAO Standard Viewport and Device Test](assets/test/tao-vd-test.zip). 
 2. Run the test on at least one mobile device, ideally on a ~7″ screen in landscape mode.
 3. In your TAO instance download the results from the tests and copy them to `/data/viewport-devices`. Older data will be deleted automatically during the build process. ![Download](assets/media/download.png)
