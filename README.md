@@ -47,7 +47,7 @@ Edit `/data/server.json` manually in case to add or remove a component.
 
 #### Updating viewports and devices
 
-** Danger Zone: The test below is still incomplete, the PCI which is the cruical part is still missing. See /src/pci/developer-readme.md for more info! **
+**Danger Zone: The test below is still incomplete, the PCI which is the cruical part is still missing. See /src/pci/developer-readme.md for more info!**
 
 1. Download the [TAO Standard Viewport and Device Test](assets/test/tao-vd-test.zip). 
 2. Run the test on at least one mobile device, ideally on a ~7″ screen in landscape mode.
