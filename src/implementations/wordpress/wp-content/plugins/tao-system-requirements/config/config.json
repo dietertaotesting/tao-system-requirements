@@ -1,0 +1,13 @@
+{
+  "api": {
+    "url": "http://127.0.0.1:5500",
+    "path": "build/api/system-requirements-latest.json"
+  },
+  "cache": {
+    "directory": "cache",
+    "lifetime": 3600
+  },
+  "shortCode": {
+    "prefix": "tao-sys-req"
+  }
+}
