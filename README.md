@@ -17,6 +17,8 @@ A simple REST API is available.
 You can also retrieve data for a particular release by replacing `-latest.json` with `-{release}.json`, data is kept for the two past releases. 
 
 ### Assets 
+**Danger Zone: The test below is still incomplete, the PCI which is the cruical part is still missing. See /src/pci/developer-readme.md for more info!**
+
 Download the [TAO Standard Viewport and Device Test](assets/test/tao-vd-test.zip).
 
 Download the [PCI](assets/pci/taoenvinfo.zip) to create your own test. If you want to implement a similar system you are probably mostly interested in [/data-provider/viewport-devices.js](data-provider/viewport-devices.js).
