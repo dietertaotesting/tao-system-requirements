@@ -5,13 +5,16 @@ import compareVersions from 'compare-versions';
 import _ from 'lodash';
 import logger from '../modules/logger.js';
 
-
 // it is important to use the raw data rather then those already treated by getServerData() | release.getData()!
 const releasePath = `${paths.data.in}/tao-release.json`;
 let release = fs.readJSONSync(releasePath, 'utf8');
 
 const serverPath = `${paths.data.in}/server.json`;
 let serverData = fs.readJSONSync(serverPath, 'utf8');
+
+const downloadPath = `${paths.data.in}/downloads.json`;
+let downloadData = fs.readJSONSync(downloadPath, 'utf8');
+
 
 const buildQuestions = () => {
     const questions = [{
@@ -98,8 +101,12 @@ const processData = response => {
         }).then(response => {
             if (response.value) {
                 serverData.release = release; // record at the time of creation
+                downloadData.release = release; 
                 fs.writeJsonSync(releasePath, release);
                 fs.writeJsonSync(serverPath, serverData, {
+                    spaces: '\t'
+                });
+                fs.writeJsonSync(downloadPath, downloadData, {
                     spaces: '\t'
                 });
                 logger.success(`Finished updating data for release ${release}.`);

@@ -1,0 +1,31 @@
+{
+	"virtualized": {
+		"hosts": [
+			{
+				"label": "Install Docker Desktop",
+				"access": "https://www.docker.com/products/docker-desktop"
+			}
+		],
+		"containers": [
+			{
+				"label": "Start TAO from the command line",
+				"access": "docker run tao-{{release}}"
+			}
+		]
+	},
+	"source": {
+		"archives": [
+			{
+				"label": "Zip Archive",
+				"access": "https://path/to/tao-{{release}}.zip"
+			}
+		],
+		"vcs": [
+			{
+				"label": "TAO on GitHub",
+				"access": "https://github.com/oat-sa/repo.git"
+			}
+		]
+	},
+	"release": "3.4.0"
+}

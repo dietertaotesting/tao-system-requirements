@@ -17,7 +17,6 @@
     "eslint": "^7.32.0",
     "fast-xml-parser": "^3.19.0",
     "fs-extra": "^9.1.0",
-    "git-commit-info": "^2.0.0",
     "handlebars": "^4.7.7",
     "lodash": "^4.17.21",
     "prompts": "^2.4.1",
@@ -28,7 +27,8 @@
   },
   "scripts": {
     "build": "node --no-warnings --experimental-json-modules ./src/builders/build",
-    "update": "npx browserslist@latest --update-db & node --no-warnings --experimental-json-modules ./src/builders/browser-post-process.js & node --no-warnings --experimental-json-modules ./src/builders/updater.js",
+    "update": "node --no-warnings --experimental-json-modules ./src/builders/updater.js",
+    "update-tmp": "npx browserslist@latest --update-db & node --no-warnings --experimental-json-modules ./src/builders/browser-post-process.js & node --no-warnings --experimental-json-modules ./src/builders/updater.js",
     "pci:build": "rollup -c ./src/pci/config/rollup.js"
   },
   "browserslist": [

@@ -55,7 +55,10 @@ const build = () => {
         status.render(currentStatus);
         return false;
     }
-    logger.log(`\nAll relevant data are at release ${currentStatus.release}, build will proceed.`);
+    const msg = currentStatus.lastMods.length ?
+        `Data changes after the last build` :
+        `All relevant data are at release ${currentStatus.release}`;
+    logger.log(`\n${msg}, build will proceed.`);
     logger.log(`Status before build:`);
     status.render(currentStatus);
     fs.copySync('src/assets/web', 'build');

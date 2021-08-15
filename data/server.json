@@ -1,6 +1,6 @@
 {
 	"stack": {
-		"database": [
+		"databases": [
 			{
 				"label": "MySQL",
 				"versions": [
@@ -20,7 +20,7 @@
 				]
 			}
 		],
-		"server": [
+		"servers": [
 			{
 				"label": "Apache",
 				"versions": [
@@ -34,21 +34,11 @@
 				]
 			}
 		],
-		"language": [
+		"languages": [
 			{
 				"label": "PHP",
 				"versions": [
-					"7.3"
-				]
-			}
-		]
-	},
-	"virtualized": {
-		"container": [
-			{
-				"label": "Docker Desktop",
-				"versions": [
-					"3.5"
+					"7.4"
 				]
 			}
 		]

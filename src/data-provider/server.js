@@ -1,43 +1,20 @@
-import fs from 'fs-extra';
-import paths from '../config/paths.json';
-import gitCommitInfo from "git-commit-info";
+import common from './download-server-common.js';
+
 
 const getMetaData = () => {
-    const path = `${paths.data.in}/server.json`;
-    const data = fs.readJsonSync(path);
-    const commitInfo = gitCommitInfo(paths.data.in);
-    const stats = fs.statSync(path);
-
-    return [
-        {
-            path,
-            release: data.release,
-            lastMod: new Date(stats.mtime),
-            lastCommit: new Date(commitInfo.date)
-        }
-    ]
+    return common.getMetaData('server');
 }
 
 /**
  * Fetch and return data from 
- * @returns {{stack: {database: {}, server: {}, language: {}}, virtualized: {container: {}}}}
+ * @returns {Object}
  */
 const getData = () => {
-    const data = fs.readJsonSync(`${paths.data.in}/server.json`);
-    delete data.release;
-    [
-        data.stack.server,
-        data.stack.database,
-        data.stack.language,
-        data.virtualized.container
-    ].forEach(group => {
-        group = group.map(entry => {
-            entry.versionStr = entry.versions.join(', ');
-            entry.key = entry.label.toLowerCase().replace(/\W+/g, '-');
-            return entry;
-        })
-    })
-    return data;
+    return common.getData('server', entry => {
+        entry.versionStr = entry.versions.join(', ');
+        entry.key = entry.label.toLowerCase().replace(/\W+/g, '-');
+        return entry;
+    });
 }
 
 export default {
