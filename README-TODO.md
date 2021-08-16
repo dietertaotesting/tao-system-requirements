@@ -1,7 +1,7 @@
 # To Do List
 
 ## Release Process
-Updating this reo must be made part of the release process
+Updating this repo must be made part of the release process
 
 ## Homepage
 - GH Page needs to be created
