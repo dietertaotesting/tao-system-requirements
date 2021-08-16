@@ -3,16 +3,20 @@
 
 namespace Oat\TaoSystemRequirements;
 
-
-use Doctrine\Inflector\InflectorFactory;
+use Oat\TaoSystemRequirements\Traits\ViewTrait;
 
 class ShortCodes
 {
+    use ViewTrait;
+
     private $shortCodeParameters;
+
+    private $domain = 'back-end';
 
     public function __construct()
     {
         $this->shortCodeParameters = $this->collectParameters();
+
     }
 
     public function registerRegular()
@@ -20,7 +24,7 @@ class ShortCodes
         foreach ($this->shortCodeParameters as $parameters) {
             add_action('init',
                 function () use ($parameters) {
-                    add_shortcode($parameters['name'],
+                    add_shortcode($parameters['code'],
                         function () use ($parameters) {
                             return call_user_func($parameters['callback']);
                         });
@@ -30,49 +34,52 @@ class ShortCodes
 
     private function collectParameters(): array
     {
-        $inflector = InflectorFactory::create()->build();
-        $structure = new \ReflectionClass(new Controller());
-        $className = $structure->getNamespaceName() . '\\' . $structure->getName();
+        $controller = new Controller();
+        $structure = new \ReflectionClass($controller);
 
         $parameters = [];
 
         foreach ($structure->getMethods() as $method) {
             $methodName = $method->getName();
-            preg_match('~render(\w+)~', $methodName, $matches);
-            if (empty($matches[1])) {
+            $label = Helpers::methodNameToLabel($methodName);
+            if (!$label) {
                 continue;
             }
-            $label = $this->getLabel($method->getDocComment());
-            if(!$label) {
-                $label = ucwords(str_replace('_', ' ', $inflector->tableize($methodName)));
-            }
-            $parameters[] = [
+            $code = Helpers::methodNameToShortCode($methodName);
+            $parameters[$code] = [
                 'label' => $label,
-                'name' => $inflector->tableize('taoCore' . $matches[1]),
-                'callback' => [$className, $methodName]
+                'description' => Helpers::commentToDescription($method->getDocComment()),
+                'code' => $code,
+                'callback' => [$controller, $methodName]
             ];
         }
+        ksort($parameters);
         return $parameters;
     }
 
-    private function getLabel(string $comment):string {
+    private function getLabel(string $comment): string
+    {
         preg_match('~@wpb\s+(?<label>.*)~', $comment, $matches);
-        if(empty($matches['label'])){
+        if (empty($matches['label'])) {
             return '';
         }
         return trim($matches['label']);
     }
 
-// function that runs when shortcode is called
-    function wpb_demo_shortcode()
+    public function getOverviewTable(): string
     {
-
-// Things that you want to do.
-        $message = 'Hello world!';
-
-// Output needs to be return
-        return $message;
+        return $this->render([
+            'shortcode-overview' => $this->shortCodeParameters
+        ]);
     }
-// register shortcode
-//add_shortcode('greeting', 'wpb_demo_shortcode');
+
+    /**
+     * Listing of all short codes
+     * @return string
+     */
+    public function displayOverviewTable()
+    {
+        echo $this->getOverviewTable();
+    }
+
 }

@@ -1,6 +1,6 @@
 <?php
-include ('./browsers.php');
-include('./from-source.php');
+include('./browsers.php');
+include('./server-side-source.php');
 ?>
 
      <section class="sr-wrapper">

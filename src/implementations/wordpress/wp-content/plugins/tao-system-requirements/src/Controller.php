@@ -4,9 +4,15 @@
 namespace Oat\TaoSystemRequirements;
 
 
+use Oat\TaoSystemRequirements\Traits\ViewTrait;
+
 class Controller
 {
+    use ViewTrait;
+
     private $data;
+
+    private $domain = 'front-end';
 
     public function __construct()
     {
@@ -14,38 +20,7 @@ class Controller
     }
 
     /**
-     * Render a template
-     * @param array $data
-     * @return string
-     */
-    private function render(array $data): string
-    {
-        $segment = key($data);
-        $views = Settings::get('root') . '/views';
-        $template = realpath($views . '/' . $segment . '.php');
-        if (!$data || !$template) {
-            return '';
-        }
-        ob_start();
-        include $template;
-        $html = ob_get_contents();
-        ob_end_clean();
-        return $html;
-    }
-
-    /**
-     * @wpb All system requirements combined
-     * @return string
-     */
-    public function renderAll(): string
-    {
-        return $this->render([
-            'all' => $this->data
-        ]);
-    }
-
-    /**
-     * @wpb Supported browsers
+     * Supported browsers
      * @return string
      */
     public function renderBrowsers(): string
@@ -56,7 +31,7 @@ class Controller
     }
 
     /**
-     * @wpb Supported programming languages
+     * Supported programming languages
      * @return string
      */
     public function renderLanguages(): string
@@ -67,7 +42,7 @@ class Controller
     }
 
     /**
-     * @wpb Supported databases
+     * Supported databases
      * @return string
      */
     public function renderDatabases(): string
@@ -78,7 +53,7 @@ class Controller
     }
 
     /**
-     * @wpb Supported web servers
+     * Supported web servers
      * @return string
      */
     public function renderServers(): string
@@ -89,7 +64,7 @@ class Controller
     }
 
     /**
-     * @wpb Docker related
+     * Docker related (Docker Desktop and command line to run TAO)
      * @return string
      */
     public function renderVirtualized(): string
@@ -100,26 +75,26 @@ class Controller
     }
 
     /**
-     * @wpb Docker related with heading and description
+     * Docker related with heading and description
      * @return string
      */
-    public function renderFromVirtualized(): string
+    public function renderVirtualizedComplete(): string
     {
         return $this->render([
-            'from-virtualized' => [
+            'virtualized-complete' => [
                 'virtualized' => $this->renderVirtualized()
             ]
         ]);
     }
 
     /**
-     * @wpb Server-side requirements and source downloads
+     * Server-side requirements and source downloads combined
      * @return string
      */
-    public function renderFromSource(): string
+    public function renderServerSideAndSource(): string
     {
         return $this->render([
-            'from-source' => [
+            'server-side-source' => [
                 'languages' => $this->renderLanguages(),
                 'servers' => $this->renderServers(),
                 'databases' => $this->renderDatabases(),
@@ -129,7 +104,7 @@ class Controller
     }
 
     /**
-     * @wpb Source downloads
+     * Source downloads (zip archive, GitHub)
      * @return string
      */
     public function renderSourceDownloads(): string
@@ -140,10 +115,10 @@ class Controller
     }
 
     /**
-     * @wpb Supported viewports and devices
+     * Supported viewports and devices
      * @return string
      */
-    public function renderViewportDevices(): string
+    public function renderViewportsAndDevices(): string
     {
         return $this->render([
             'viewports-devices' => $this->data['viewportDevices']
@@ -152,7 +127,7 @@ class Controller
 
 
     /**
-     * @wpb Release
+     * Version number of the current TAO release
      * @return string
      */
     public function renderRelease(): string

@@ -1,6 +1,6 @@
 {
   "api": {
-    "url": "http://127.0.0.1:5500",
+    "url": "https://oat-sa.github.io/tao-system-requirements",
     "path": "build/api/system-requirements-latest.json"
   },
   "cache": {

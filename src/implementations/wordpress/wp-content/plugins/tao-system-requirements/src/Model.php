@@ -84,28 +84,29 @@ class Model
     private function fetch(): array
     {
         $cacheData = $this->cache->retrieve();
-        if (!$cacheData['data'] || $cacheData['expired']) {
-            $freshData = $this->fetchRemote();
-            if ($freshData) {
-                $this->cache->store($freshData);
+        $data = $cacheData['data'];
+        if (!$data || $cacheData['expired']) {
+            $remoteData = $this->fetchRemote();
+            if ($remoteData) {
+                $data = $remoteData;
+                $this->cache->store($data);
             }
         }
-        if (!empty($freshData)) {
-            return $freshData;
-        } else if ($cacheData['data']) {
-            return $cacheData['data'];
-        } else {
-            return [];
-        }
+        return $data;
     }
 
     private function fetchRemote()
     {
-        $client = new Client();
-        $response = $client->request('GET', Settings::get('api.url') . '/' . Settings::get('api.path'));
-        if ($response->getStatusCode() !== 200) {
+        $response = wp_remote_get(Settings::get('api.url') . '/' . Settings::get('api.path'));
+        if (wp_remote_retrieve_response_code($response) !== 200) {
             return false;
         }
-        return json_decode($response->getBody(), 1);
+        $body = wp_remote_retrieve_response_code($response);
+        if(is_array($body)){
+            return $body;
+        }
+        else {
+            return false;
+        }
     }
 }

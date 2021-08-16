@@ -1,4 +1,4 @@
-<ul class="<?=key($data)?>" data-tao-type="system-requirement">
+<ul class="<?=key($data)?> tao-system-requirements">
     <?php foreach($data['source-downloads']['archives'] as $part): ?>
         <li>
             <a class="title" href="<?=$part['access']?>"><?=$part['label']?></a>

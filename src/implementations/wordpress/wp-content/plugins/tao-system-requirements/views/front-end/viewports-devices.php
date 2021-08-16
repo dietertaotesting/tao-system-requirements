@@ -1,8 +1,8 @@
-    <div class="<?=key($data)?>">
+    <div class="<?=key($data)?> tao-system-requirements">
         <?php foreach($data['viewports-devices'] as $part): ?>
         <details open>
             <summary><?=$part['env']['label']?></summary>
-            <table>
+            <table class="widefat striped">
                 <colgroup>
                     <col class="th">
                     <col>

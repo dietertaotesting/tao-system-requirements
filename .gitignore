@@ -1,3 +1,4 @@
 /node_modules
 /.idea
 /tmp
+/src/implementations/wordpress/wp-content/plugins/tao-system-requirements/vendor

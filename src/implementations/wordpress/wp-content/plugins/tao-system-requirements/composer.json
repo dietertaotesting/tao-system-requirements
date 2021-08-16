@@ -1,10 +1,6 @@
 {
     "name": "oat/tao-system-requirements",
-    "description": "Includes data from https://github.com/oat-sa/tao-system-requirements.git in WP",
-    "require": {
-        "guzzlehttp/guzzle": "^7.3",
-        "doctrine/inflector": "^2.0"
-    },
+    "description": "Displays data from https://github.com/oat-sa/tao-system-requirements.git in WP",
     "license": "GPL-2",
     "autoload": {
         "psr-4": {

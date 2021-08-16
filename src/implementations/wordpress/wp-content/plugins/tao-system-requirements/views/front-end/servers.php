@@ -1,4 +1,4 @@
-<ul class="<?=key($data)?>" data-tao-type="system-requirement">
+<ul class="<?=key($data)?> tao-system-requirements">
     <?php foreach($data['servers'] as $part): ?>
         <li>
             <span class="title"><?=$part['label']?></span>

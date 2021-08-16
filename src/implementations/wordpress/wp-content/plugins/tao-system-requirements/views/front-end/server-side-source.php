@@ -1,4 +1,4 @@
-<section class="<?=key($data)?>">
+<section class="<?=key($data)?> tao-system-requirements">
     <h2>Source downloads</h2>
     <?=$data['from-source']['source-downloads']?>
     <h2>Server-side requirements</h2>

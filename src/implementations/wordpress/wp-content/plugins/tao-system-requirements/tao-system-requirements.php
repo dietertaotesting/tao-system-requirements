@@ -14,21 +14,11 @@
 
 require_once 'vendor/autoload.php';
 
-use Oat\TaoSystemRequirements\ShortCodes;
+use Oat\TaoSystemRequirements\WpBridge;
 use Oat\TaoSystemRequirements\Settings;
 
-$root = dirname(__FILE__);
-Settings::init(
-    array_merge([
-        'root' => $root
-    ],
-        json_decode(file_get_contents($root . '/config/config.json'), 1)
-    )
-);
-
 try {
-    $shortCodes = new ShortCodes();
-    $shortCodes->registerRegular();
+    new WpBridge(plugin_basename( __FILE__ ), dirname(__FILE__));
 } catch (Exception $e) {
     //print $e->getMessage();
 }
