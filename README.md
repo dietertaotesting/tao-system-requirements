@@ -1,8 +1,11 @@
 # TAO System requirements
 
+
+__!!This document describes the final stage, please read the [todo list](./README-TODO.md) first!!__
+
+
 ## Homepage
 
-**GH Page yet to be created!**
 
 https://oat-sa.github.io/tao-system-requirements
 
@@ -17,6 +20,8 @@ A simple REST API is available.
 You can also retrieve data for a particular release by replacing `-latest.json` with `-{release}.json`, data is kept for the two past releases. 
 
 ### Assets 
+
+
 Download the [TAO Standard Viewport and Device Test](assets/test/tao-vd-test.zip).
 
 Download the [PCI](assets/pci/taoenvinfo.zip) to create your own test. If you want to implement a similar system you are probably mostly interested in [/data-provider/viewport-devices.js](data-provider/viewport-devices.js).
@@ -49,8 +54,6 @@ npm run update
 Edit `/data/server.json` manually in case to add or remove a component. 
 
 #### Updating viewports and devices
-
-**Danger Zone: The test below is still incomplete, the PCI which is the cruical part is still missing. See /src/pci/developer-readme.md for more info!**
 
 1. Download the [TAO Standard Viewport and Device Test](assets/test/tao-vd-test.zip). 
 2. Run the test on at least one mobile device, ideally on a ~7″ screen in landscape mode.

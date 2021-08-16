@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>TAO release 3.4.0 - System requirements</title>
+  <title>TAO release 3.4.0</title>
   <meta name="description" content="System requirements for TAO release 3.4.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -16,7 +16,7 @@
 
 <body class="sr-wrapper">
   <header>
-    <h1>System requirements for TAO 3.4.0</h1>
+    <h1>TAO release 3.4.0</h1>
   </header>
   <main>
     <section>
@@ -35,7 +35,7 @@
         <li class="firefox">
           <span class="icon"></span>
           <div class="title">Firefox</div>
-          <span class="versions">90</span>
+          <span class="versions">91</span>
         </li>
         <li class="internet-explorer">
           <span class="icon"></span>
@@ -65,16 +65,27 @@
       </ul>
     </section>
     <section>
-      <h2>Server</h2>
-      <p>When you are using TAO from the source</p>
-      <h3>Programming Language</h3>
+      <h2>Build TAO from the source</h2>
+      <h3>Download the code</h3>      
+      <ul class="downloads">
+        <li class="">
+          <a class="title" href="https://path/to/tao-3.4.0.zip">Zip Archive</a>
+        </li>
+        <li class="">
+          <a class="title" href="https://github.com/oat-sa/repo.git">TAO on GitHub</a>
+        </li>
+        </ul>
+    </section>
+    <section>
+      <h3>Server-side requirements</h3>
+      <h4>Programming Language</h4>
       <ul class="programming-language">
         <li class="php">
           <span class="title">PHP</span>
           <span class="versions">7.4</span>
         </li>
       </ul>
-      <h3>Web Server</h3>
+      <h4>Web Server</h4>
       <ul class="server">
         <li class="apache">
           <span class="title">Apache</span>
@@ -85,7 +96,7 @@
           <span class="versions">1.2</span>
         </li>
       </ul>
-      <h3>Database</h3>
+      <h4>Database</h4>
       <ul class="database">
         <li class="mysql">
           <span class="title">MySQL</span>
@@ -102,18 +113,20 @@
       </ul>
     </section>
     <section>
-      <h2>Docker</h2>
-      <p>When you are using TAO as a container image</p>
+      <h2>Install TAO as a Docker container</h2>
       <ul class="container">
-        <li class="docker-desktop">
-          <span class="title">Docker Desktop</span>
-          <span class="versions">3.5</span>
+        <li class="">
+          <a class="title" href="https://www.docker.com/products/docker-desktop">Install Docker Desktop</a>
+        </li>
+        <li class="">
+          <div class="title">Start TAO from the command line</div>
+          <pre>docker run tao-3.4.0</pre>
         </li>
       </ul>
     </section>
     <section>
       <h2>Viewports and Devices</h2>
-      <h3>Tests we performed on mobile screens</h3>
+      <p>Tests we performed on mobile screens</p>
       <div class="viewports-devices">
         <details open>
           <summary>1920 × 1080</summary>

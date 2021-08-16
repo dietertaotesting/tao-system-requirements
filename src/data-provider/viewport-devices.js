@@ -3,12 +3,10 @@ import release from './tao-release.js';
 import paths from '../config/paths.json';
 import parser from 'fast-xml-parser';
 import _ from 'lodash';
-import gitCommitInfo from "git-commit-info";
 
 const getMetaData = () => {
     const data = [];
     const vpPath = `${paths.data.in}/viewport-devices`;
-    const commitInfo = gitCommitInfo(vpPath);
     for (let file of fs.readdirSync(vpPath)) {
         let path = `${vpPath}/${file}`;
         const stats = fs.statSync(path);
@@ -20,8 +18,7 @@ const getMetaData = () => {
         data.push({
             path,
             release: match.groups.release,
-            lastMod: new Date(stats.mtime),
-            lastCommit: new Date(commitInfo.date)
+            lastMod: new Date(stats.mtime)
         })
     }
     return data;

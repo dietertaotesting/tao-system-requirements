@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>TAO release {{ release }} - System requirements</title>
+  <title>TAO release {{ release }}</title>
   <meta name="description" content="System requirements for TAO release {{ release }}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -16,7 +16,7 @@
 
 <body class="sr-wrapper">
   <header>
-    <h1>System requirements for TAO {{ release }}</h1>
+    <h1>TAO release {{ release }}</h1>
   </header>
   <main>
     <section>
@@ -32,29 +32,44 @@
       </ul>
     </section>
     <section>
-      <h2>Server</h2>
-      <p>When you are using TAO from the source</p>
-      <h3>Programming Language</h3>
+      <h2>Build TAO from the source</h2>
+      <h3>Download the code</h3>      
+      <ul class="downloads">
+        {{#each downloads.source.archives}}
+        <li class="{{this.key}}">
+          <a class="title" href="{{this.access}}">{{this.label}}</a>
+        </li>
+        {{/each}}      
+        {{#each downloads.source.vcs}}
+        <li class="{{this.key}}">
+          <a class="title" href="{{this.access}}">{{this.label}}</a>
+        </li>
+        {{/each}}
+        </ul>
+    </section>
+    <section>
+      <h3>Server-side requirements</h3>
+      <h4>Programming Language</h4>
       <ul class="programming-language">
-        {{#each server.stack.language}}
+        {{#each server.stack.languages}}
         <li class="{{this.key}}">
           <span class="title">{{this.label}}</span>
           <span class="versions">{{this.versions}}</span>
         </li>
         {{/each}}
       </ul>
-      <h3>Web Server</h3>
+      <h4>Web Server</h4>
       <ul class="server">
-        {{#each server.stack.server}}
+        {{#each server.stack.servers}}
         <li class="{{this.key}}">
           <span class="title">{{this.label}}</span>
           <span class="versions">{{this.versions}}</span>
         </li>
         {{/each}}
       </ul>
-      <h3>Database</h3>
+      <h4>Database</h4>
       <ul class="database">
-        {{#each server.stack.database}}
+        {{#each server.stack.databases}}
         <li class="{{this.key}}">
           <span class="title">{{this.label}}</span>
           <span class="versions">{{this.versions}}</span>
@@ -63,20 +78,24 @@
       </ul>
     </section>
     <section>
-      <h2>Docker Image</h2>
-      <p>When you are using TAO as a container image</p>
+      <h2>Install TAO as a Docker container</h2>
       <ul class="container">
-        {{#each server.virtualized.container}}
+        {{#each downloads.virtualized.hosts}}
         <li class="{{this.key}}">
-          <span class="title">{{this.label}}</span>
-          <span class="versions">{{this.versions}}</span>
+          <a class="title" href="{{this.access}}">{{this.label}}</a>
+        </li>
+        {{/each}}
+        {{#each downloads.virtualized.containers}}
+        <li class="{{this.key}}">
+          <div class="title">{{this.label}}</div>
+          <pre>{{this.access}}</pre>
         </li>
         {{/each}}
       </ul>
     </section>
     <section>
       <h2>Viewports and Devices</h2>
-      <h3>Tests we performed on mobile screens</h3>
+      <p>Tests we performed on mobile screens</p>
       <div class="viewports-devices">
         {{#each viewportDevices}}
         <details open>

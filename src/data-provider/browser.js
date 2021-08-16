@@ -77,7 +77,6 @@ function getData() {
 const getMetaData = () => {
     const data = fs.readJsonSync(`${paths.data.in}/browser-meta.json`);
     data.lastMod = new Date(data.lastMod);
-    data.lastCommit = new Date(data.lastCommit);
     return [
         data
     ]
