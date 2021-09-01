@@ -1,0 +1,13 @@
+{
+  "api": {
+    "url": "https://oat-sa.github.io/tao-system-requirements",
+    "path": "build/api/system-requirements-latest.json"
+  },
+  "cache": {
+    "directory": "cache",
+    "lifetime": 3600
+  },
+  "shortCode": {
+    "prefix": "tao-sys-req"
+  }
+}

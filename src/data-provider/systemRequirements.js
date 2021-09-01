@@ -5,6 +5,10 @@ import viewportDevices from './viewport-devices.js';
 import release from './tao-release.js';
 import api from './api.js';
 
+/**
+ * Collect data from all other providers
+ * @returns {{server: *, downloads: *, release: *, api, browsers: Array, viewportDevices: Set<*>}}
+ */
 const getData = () => {
     return {
         browsers: browser.getData(),
@@ -16,6 +20,10 @@ const getData = () => {
     }
 }
 
+/**
+ * Collect metadata from all other providers
+ * @returns {{server: {path: `${string}/${string}.json`, release, lastMod: Date}[], downloads: {path: `${string}/${string}.json`, release, lastMod: Date}[], release: {path: string, release, lastMod: Date}[], api: {path: string, release: string, lastMod: string}[], browsers: Array, viewportDevices: Array}}
+ */
 const getMetaData = () => {
     return {
         api: api.getMetaData(),

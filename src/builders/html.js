@@ -2,12 +2,11 @@ import systemRequirements from '../data-provider/systemRequirements.js';
 import fs from 'fs-extra';
 import Handlebars from 'handlebars';
 import paths from '../config/paths.json';
-import _ from 'lodash';
-import logger from '../modules/logger.js';
+import console from 'a-nicer-console';
 
 
 /**
- * Build the JSON file
+ * Build the webpage
  */
 const buildHtml = () => {
     try {
@@ -16,9 +15,9 @@ const buildHtml = () => {
         const renderTemplate = Handlebars.compile(template);
         const html = renderTemplate(data)
         fs.outputFile(paths.html.out, html);
-        logger.success(`Finished creating website for release ${data.release}.`)
+        console.success(`Finished creating website for release ${data.release}.`)
     } catch (e) {
-        logger.error(`Process failed with message "${e}"`);
+        console.error(`Process failed with message "${e}"`);
     }
 };
 

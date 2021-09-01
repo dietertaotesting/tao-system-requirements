@@ -4,6 +4,14 @@ import paths from '../config/paths.json';
 import parser from 'fast-xml-parser';
 import _ from 'lodash';
 
+/**
+ * The PCI creates a JSON entry in the TAO result XML.
+ * Here we parse the JSON for the TAO version.
+ *
+ * It's OK if you have to read this twice
+ *
+ * @returns {Array}
+ */
 const getMetaData = () => {
     const data = [];
     const vpPath = `${paths.data.in}/viewport-devices`;
@@ -24,7 +32,10 @@ const getMetaData = () => {
     return data;
 }
 
-
+/**
+ * Collect the contents of all "delivery_execution_*.xml"
+ * @returns {Array}
+ */
 const getResultXml = () => {
     const currentRelease = release.getData();
     const data = [];
@@ -36,8 +47,10 @@ const getResultXml = () => {
     return data;
 }
 
-
-
+/**
+ * Pull the JSON results from XML entries and extract the relevant data
+ * @returns {Set<any>}
+ */
 const getData = () => {
     let data = new Set();
 

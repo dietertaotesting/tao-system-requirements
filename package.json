@@ -10,6 +10,7 @@
     "@rollup/plugin-commonjs": "^20.0.0",
     "@rollup/plugin-node-resolve": "^13.0.4",
     "@rollup/stream": "^2.0.0",
+    "a-nicer-console": "^1.0.0",
     "browserslist": "^4.16.7",
     "compare-versions": "^3.6.0",
     "datauri": "^3.0.0",
@@ -27,8 +28,10 @@
   },
   "scripts": {
     "build": "node --no-warnings --experimental-json-modules ./src/builders/build",
-    "update": "node --no-warnings --experimental-json-modules ./src/builders/updater.js",
-    "update-tmp": "npx browserslist@latest --update-db & node --no-warnings --experimental-json-modules ./src/builders/browser-post-process.js & node --no-warnings --experimental-json-modules ./src/builders/updater.js",
+    "update:browsers": "npx browserslist@latest --update-db & npm update @oat-sa/browserslist-config-tao & node --no-warnings --experimental-json-modules ./src/builders/browser-post-process.js",
+    "update:components": "node --no-warnings --experimental-json-modules ./src/builders/updater.js",
+    "update": "npm run update:browsers & npm run update:components",
+    "deploy:wp-plugin": "php ./src/implementations/wordpress-plugin/builder/Builder.php",
     "pci:build": "rollup -c ./src/pci/config/rollup.js"
   },
   "browserslist": [
@@ -37,5 +40,5 @@
   "main": "index.js",
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "GPL-2.0-only"
 }

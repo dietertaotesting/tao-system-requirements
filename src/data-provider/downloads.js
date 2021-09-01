@@ -1,12 +1,16 @@
 import common from './download-server-common.js';
 import release from './tao-release.js';
 
+/**
+ * Meta data
+ * @returns {{path: `${string}/${string}.json`, release, lastMod: Date}[]}
+ */
 const getMetaData = () => {
     return common.getMetaData('downloads');
 }
 
 /**
- * Fetch and return data from 
+ * Fetch and return data from data/downloads.json
  * @returns {Object}
  */
 const getData = () => {

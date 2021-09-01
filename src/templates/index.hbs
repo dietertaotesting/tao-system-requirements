@@ -14,14 +14,14 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body class="sr-wrapper">
+<body class="tao-system-requirements">
   <header>
     <h1>TAO release {{ release }}</h1>
   </header>
   <main>
-    <section>
+    <section class="tao-system-requirements">
       <h2>Browsers</h2>
-      <ul class="browsers">
+      <ul class="browsers tao-system-requirements">
         {{#each browsers}}
         <li class="{{this.key}}">
           <span class="icon"></span>
@@ -31,10 +31,10 @@
         {{/each}}
       </ul>
     </section>
-    <section>
+    <section class="tao-system-requirements">
       <h2>Build TAO from the source</h2>
       <h3>Download the code</h3>      
-      <ul class="downloads">
+      <ul class="downloads tao-system-requirements">
         {{#each downloads.source.archives}}
         <li class="{{this.key}}">
           <a class="title" href="{{this.access}}">{{this.label}}</a>
@@ -47,10 +47,10 @@
         {{/each}}
         </ul>
     </section>
-    <section>
+    <section class="tao-system-requirements">
       <h3>Server-side requirements</h3>
       <h4>Programming Language</h4>
-      <ul class="programming-language">
+      <ul class="programming-language tao-system-requirements">
         {{#each server.stack.languages}}
         <li class="{{this.key}}">
           <span class="title">{{this.label}}</span>
@@ -59,7 +59,7 @@
         {{/each}}
       </ul>
       <h4>Web Server</h4>
-      <ul class="server">
+      <ul class="server tao-system-requirements">
         {{#each server.stack.servers}}
         <li class="{{this.key}}">
           <span class="title">{{this.label}}</span>
@@ -77,9 +77,9 @@
         {{/each}}
       </ul>
     </section>
-    <section>
+    <section class="tao-system-requirements">
       <h2>Install TAO as a Docker container</h2>
-      <ul class="container">
+      <ul class="container tao-system-requirements">
         {{#each downloads.virtualized.hosts}}
         <li class="{{this.key}}">
           <a class="title" href="{{this.access}}">{{this.label}}</a>
@@ -93,10 +93,10 @@
         {{/each}}
       </ul>
     </section>
-    <section>
+    <section class="tao-system-requirements">
       <h2>Viewports and Devices</h2>
       <p>Tests we performed on mobile screens</p>
-      <div class="viewports-devices">
+      <div class="viewports-devices tao-system-requirements">
         {{#each viewportDevices}}
         <details open>
           <summary>{{this.env.label}}</summary>

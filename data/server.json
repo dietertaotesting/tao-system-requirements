@@ -4,19 +4,19 @@
 			{
 				"label": "MySQL",
 				"versions": [
-					"5.7"
+					"8.0"
 				]
 			},
 			{
 				"label": "MariaDB",
 				"versions": [
-					"10.4"
+					"10.6"
 				]
 			},
 			{
 				"label": "PostgreSQL",
 				"versions": [
-					"9.6"
+					"13.4"
 				]
 			}
 		],
@@ -30,7 +30,7 @@
 			{
 				"label": "nginx",
 				"versions": [
-					"1.2"
+					"1.20"
 				]
 			}
 		],
