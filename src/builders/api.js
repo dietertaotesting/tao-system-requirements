@@ -1,10 +1,10 @@
 import systemRequirements from '../data-provider/systemRequirements.js';
 import fs from 'fs-extra';
 import paths from '../config/paths.json';
-import logger from '../modules/logger.js';
+import console from 'a-nicer-console';
 
 /**
- * Build the JSON file
+ * Build the API JSON files
  */
 const buildApi = () => {
     try {
@@ -23,9 +23,9 @@ const buildApi = () => {
             fs.outputJson(`${paths.api.out}/${type}-latest.json`, data);
         }
 
-        logger.success(`Finished creating API for release ${release}.`);
+        console.success(`Finished creating API for release ${release}.`);
     } catch (e) {
-        logger.error(`Process failed with message "${e}"`);
+        console.error(`Process failed with message "${e}"`);
     }
 };
 

@@ -2,6 +2,10 @@ import date from 'date-and-time';
 import path from 'path';
 import systemRequirements from "../data-provider/systemRequirements.js";
 
+/**
+ * Retrieve status data based on metadata, timestamps etc
+ * @returns {{canBuild: boolean, metaData: {server: [{path: string, release: *, lastMod: Date}], downloads: [{path: string, release: *, lastMod: Date}], release: [{path: *, release: *, lastMod: Date}], api: [{path: string, release: string, lastMod: string}], browsers: [*], viewportDevices: []}, buildRequired: (number|boolean), vdData: *[], release, lastMods: *[], api: string}}
+ */
 const getData = () => {
     const metaData = systemRequirements.getMetaData();
     const currentRelease = metaData.release[0].release;
@@ -20,6 +24,7 @@ const getData = () => {
             }
         })
     }
+    // at least one test on viewports/devices, value for "release" the same across the board
     const canBuild = vdData.includes(currentRelease) && Array.from(new Set(releases)).length === 1;
     const buildRequired = metaData.api[0].release !== currentRelease || lastMods.length;
     return {
@@ -33,6 +38,10 @@ const getData = () => {
     }
 }
 
+/**
+ * Render status as table on the CLI
+ * @param status
+ */
 const render = status => {
     const tblData = [];
     for (let [type, values] of Object.entries(status.metaData)) {

@@ -1,10 +1,24 @@
 import fs from 'fs-extra';
 import paths from '../config/paths.json';
 
+/**
+ * Downloads and server side have the same structure and some methods can be shared
+ */
+
+/**
+ * Path to the file
+ * @param type
+ * @returns {`${string}/${string}.json`}
+ */
 const getPath = type => {
     return `${paths.data.in}/${type}.json`;
 }
 
+/**
+ * Metadata
+ * @param type
+ * @returns {[{path: `${string}/${string}.json`, release, lastMod: Date}]}
+ */
 const getMetaData = type => {
     const path = getPath(type);
     const data = fs.readJsonSync(path);
@@ -19,6 +33,12 @@ const getMetaData = type => {
     ]
 }
 
+/**
+ * Data
+ * @param type
+ * @param callback
+ * @returns {*}
+ */
 const getData = (type, callback) => {
     const data = fs.readJsonSync(getPath(type));
     delete data.release;

@@ -43,6 +43,7 @@ const format = browser => {
 /**
  * Convert browser data to an array
  * order: desktop -> mobile, then alphabetically, then version
+ * @returns {Array}
  */
 function getData() {
     const listing = {
@@ -74,6 +75,10 @@ function getData() {
     return Object.values(listing['desktop']).concat(Object.values(listing['mobile']));
 }
 
+/**
+ * Retrieve metadata from data/browser-meta.json
+ * @returns {Array}
+ */
 const getMetaData = () => {
     const data = fs.readJsonSync(`${paths.data.in}/browser-meta.json`);
     data.lastMod = new Date(data.lastMod);

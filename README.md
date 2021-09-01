@@ -1,8 +1,6 @@
 # TAO System requirements
 
-
-__!!This document describes the final stage, please read the [todo list](./README-TODO.md) first!!__
-
+__This document describes the final stage, please read the [todo list](./README-TODO.md) first!__
 
 ## Homepage
 
@@ -47,11 +45,18 @@ git checkout develop
 ```
 
 #### Updating the browser database and the versions of TAO, Server, Database or Docker
+Mind you that _Docker_ refers to the command only, not the actual Docker version of TAO!
 
 ```bash
 npm run update
 ```
 Edit `/data/server.json` manually in case to add or remove a component. 
+
+The browser db and the server side components (incl. the Docker command) can be updated separately with:
+```bash
+npm run update:browsers
+npm run update:components
+```
 
 #### Updating viewports and devices
 
@@ -78,3 +83,11 @@ git push origin develop
 ```
 
 Finally create a pull request to `main` and merge your changes.
+
+#### Deploying the WordPress plugin
+In case you have been working on the WordPress plugin you can deploy it with any of the following two commands:
+```bash 
+php ./src/implementations/wordpress-plugin/builder/Builder.php
+# or
+npm run deploy:wp-plugin
+``` 

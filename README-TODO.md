@@ -12,4 +12,4 @@ Updating this repo must be made part of the release process
 - Using this test and updating this repo needs to be made part of the release process
 
 ## Implementations
-The stylesheet in the [WP implementation](src/implementations/wordpress/wp-content/plugins/tao-system-requirements/) has some minor issues with very low impact
+The stylesheet in the [WP implementation](src/implementations/wordpress-plugin/tao-system-requirements/) has some minor issues with very low impact

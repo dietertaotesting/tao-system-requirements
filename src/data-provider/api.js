@@ -1,6 +1,10 @@
 import fs from 'fs-extra';
 import paths from '../config/paths.json';
 
+/**
+ * Get meta data from last build
+ * @returns {[{path: string, release: string, lastMod: string}]}
+ */
 const getMetaData = () => {
     let data = {
         path: 'not found: system-requirements-latest.json',
@@ -24,6 +28,10 @@ const getMetaData = () => {
     ]
 }
 
+/**
+ * Get data from last build
+ * @returns {*}
+ */
 const getData = () => {
     return getMetaData().release;
 }
