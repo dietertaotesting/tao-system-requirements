@@ -1,0 +1,55 @@
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+    background-color: #fff;
+    font: 62.5%/1.2 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-size: 1.5rem;
+}
+
+main {
+    width: 100vw;
+    max-width: 1040px;
+    margin: auto
+}
+
+table {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: .5rem
+}
+
+thead th {
+    background-color: #eee;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+pre, code {
+    font: 1.6rem "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    background: #eee;
+}
+
+pre {
+    border: 1px solid #ddd;
+    border-radius: .5rem;
+    padding: 1rem;
+}

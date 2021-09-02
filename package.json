@@ -31,7 +31,7 @@
     "update:browsers": "npx browserslist@latest --update-db & npm update @oat-sa/browserslist-config-tao & node --no-warnings --experimental-json-modules ./src/builders/browser-post-process.js",
     "update:components": "node --no-warnings --experimental-json-modules ./src/builders/updater.js",
     "update": "npm run update:browsers & npm run update:components",
-    "deploy:wp-plugin": "php ./src/implementations/wordpress-plugin/builder/Builder.php",
+    "deploy:wp-plugin": "php ./src/implementations/wordpress-plugin/tao-system-requirements/deploy.php",
     "pci:build": "rollup -c ./src/pci/config/rollup.js"
   },
   "browserslist": [

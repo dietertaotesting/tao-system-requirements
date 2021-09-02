@@ -1,6 +1,39 @@
 # TAO System requirements
 
-__This document describes the final stage, please read the [todo list](./README-TODO.md) first!__
+
+## To Do
+Further down the document describes the final outcome but before that some things need to be done. If you complete any of these tasks please remove them from the list.
+
+### Code review
+The code in this project has not been reviewed yet.
+
+### Viewports and Devices
+- A PCI needs to be created, see [developer-readme.md](/src/pci/developer-readme.md) for more information. Work is pending.
+- The first item in [TAO Standard Viewport and Device Test](assets/test/tao-vd-test.zip) needs to be replaced by one that uses the PCI
+- Using this test and updating this repo needs to be made part of the release process
+- Some projects already use https://github.com/oat-sa/browserslist-app-tao. They will need to migrate to this repo. It needs to be clarified with Client Diagnostics if they already use the browser list and if they don't, they should.
+
+### Downloads
+- Work for a Docker pilot as well as for regular Docker releases is underway, but not finished yet. 
+- `data/downloads.json` needs to be reviewed and corrected. The data under `virtualized.hosts` are correct but those under `virtualized.containers` and `source` are only guesses for now. Depends on the above.
+
+### Server 
+- `data/server.json` needs to be reviewed.
+
+### WordPress Plugin
+- The two URLs in `src/implementations/wordpress-plugin/tao-system-requirements/tao-system-requirements.php` need to be updated
+- The Plugin needs to be redeployed
+
+### Release Process
+Updating this repo must be made part of the release process
+
+### Homepage
+- GH Page needs to be created
+
+
+_End of todo list, final outcome starts below_
+
+---
 
 ## Homepage
 
@@ -84,10 +117,12 @@ git push origin develop
 
 Finally create a pull request to `main` and merge your changes.
 
+---
 #### Deploying the WordPress plugin
-In case you have been working on the WordPress plugin you can deploy it with any of the following two commands:
+There is an implementation that uses the API in the form of a WordPress Plugin under `src/implementations/wordpress-plugin`. This plugin is complete and working but if you modify it for any reason you will need to deploy it with any of the following two commands:
 ```bash 
 php ./src/implementations/wordpress-plugin/builder/Builder.php
 # or
 npm run deploy:wp-plugin
 ``` 
+This zips the plugin and moves the resulting archive to `build/wordpress-plugin/tao-system-requirements.zip` where it will be discovered by WordPress.

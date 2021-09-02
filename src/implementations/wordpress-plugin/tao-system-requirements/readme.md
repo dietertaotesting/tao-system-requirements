@@ -6,6 +6,7 @@ This plugin retrieves the latest system requirements and download URLs from the 
 
 ### Shortcodes 
 The shortcodes are generated from the method names and comments of `tao-system-requirements/src/Controller.php`. All methods starting with `render` create a corresponding shortcode. Currently the mapping is the following:
+
 | Method                        | Short code                        | Label                  | Description                                                 |
 |-------------------------------|-----------------------------------|------------------------|-------------------------------------------------------------|
 | `renderBrowsers()`            | [tao_core_browsers]               | Browsers               | Supported browsers                                          |
@@ -24,7 +25,7 @@ The shortcodes are generated from the method names and comments of `tao-system-r
 
 The plugin is usable and while it could be improved a bit here and there, we have no immediate need to do this. If you work on it, however, you will need to bump the version in `tao-system-requirements.php` and to deploy by executing one of the following commands from de repository root.
 ```bash 
-php ./src/implementations/wordpress-plugin/builder/Builder.php
+php ./src/implementations/wordpress-plugin/tao-system-requirements/deploy.php
 # or
 npm run deploy:wp-plugin
 ``` 
