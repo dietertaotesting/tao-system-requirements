@@ -127,4 +127,4 @@ npm run deploy:wp-plugin
 ``` 
 This zips the plugin and moves the resulting archive to `build/wordpress-plugin/tao-system-requirements.zip` where it will be discovered by WordPress.
 
-For more details on the plugin refer to [to the respective readme](src/implementations/wordpress-plugin/tao-system-requirements/readme.md).
+For more details on the plugin refer to [the respective readme](src/implementations/wordpress-plugin/tao-system-requirements/readme.md).
