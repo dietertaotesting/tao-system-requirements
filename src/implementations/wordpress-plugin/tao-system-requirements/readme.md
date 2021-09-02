@@ -31,4 +31,10 @@ npm run deploy:wp-plugin
 ``` 
 This creates a new archive `build/wp-plugin`, which will then be found from within WordPress.
 
-You can test the plugin by installing it on a random WordPress.
+You can test the plugin by installing it on a random WordPress:
+- Create a random post
+- Paste the shortcuts in
+
+They should all display different sections of the system requirements. Note there will be duplicates because some shortcodes are wrappers of multiple others.
+
+Example: `[tao_core_servers]` + `[tao_core_source_downloads]` = `[tao_core_server_side_and_source]`.
