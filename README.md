@@ -121,7 +121,7 @@ Finally create a pull request to `main` and merge your changes.
 #### Deploying the WordPress plugin
 There is an implementation that uses the API in the form of a WordPress Plugin under `src/implementations/wordpress-plugin`. This plugin is complete and working but if you modify it for any reason you will need to deploy it with any of the following two commands:
 ```bash 
-php ./src/implementations/wordpress-plugin/builder/Builder.php
+php ./src/implementations/wordpress-plugin/tao-system-requirements/deploy.php
 # or
 npm run deploy:wp-plugin
 ``` 
