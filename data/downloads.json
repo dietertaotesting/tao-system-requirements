@@ -2,8 +2,16 @@
 	"virtualized": {
 		"hosts": [
 			{
-				"label": "Install Docker Desktop",
-				"access": "https://www.docker.com/products/docker-desktop"
+				"label": "Docker Desktop for Windows",
+				"access": "https://hub.docker.com/editions/community/docker-ce-desktop-windows"
+			},
+			{
+				"label": "Docker Desktop for Mac",
+				"access": "https://hub.docker.com/editions/community/docker-ce-desktop-mac"
+			},
+			{
+				"label": "Docker Desktop for Linux",
+				"access": "https://hub.docker.com/search?offering=community&operating_system=linux&q=&type=edition"
 			}
 		],
 		"containers": [

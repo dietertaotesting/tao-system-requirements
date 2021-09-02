@@ -1,0 +1,157 @@
+<!doctype html>
+<html class="no-js" lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <title>WP Plugin TAO System requirements</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+    background-color: #fff;
+    font: 62.5%/1.2 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-size: 1.5rem;
+}
+
+main {
+    width: 100vw;
+    max-width: 1040px;
+    margin: auto
+}
+
+table {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: .5rem
+}
+
+thead th {
+    background-color: #eee;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+pre, code {
+    font: 1.6rem "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    background: #eee;
+}
+
+pre {
+    border: 1px solid #ddd;
+    border-radius: .5rem;
+    padding: 1rem;
+}
+
+    </style>
+</head>
+
+<body>
+<main>
+  <h1>TAO System requirements</h1>
+<h2>WordPress plugin</h2>
+<p>This plugin retrieves the latest system requirements and download URLs from the API (behind a GH-Page) on <a href="https://oat-sa.github.io/tao-system-requirements">oat-sa.github.io/tao-system-requirements</a>. It provides WordPress shortcodes for all blocks as well as a stylesheet including all assets. Data will be cached in WP based on <code>config/config.json#cache:lifetime</code>.</p>
+<h3>Shortcodes</h3>
+<p>The shortcodes are generated from the method names and comments of <code>tao-system-requirements/src/Controller.php</code>. All methods starting with <code>render</code> create a corresponding shortcode. Currently the mapping is the following:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Short code</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>renderBrowsers()</code></td>
+<td>[tao_core_browsers]</td>
+<td>Browsers</td>
+<td>Supported browsers</td>
+</tr>
+<tr>
+<td><code>renderDatabases()</code></td>
+<td>[tao_core_databases]</td>
+<td>Databases</td>
+<td>Supported databases</td>
+</tr>
+<tr>
+<td><code>renderLanguages()</code></td>
+<td>[tao_core_languages]</td>
+<td>Languages</td>
+<td>Supported programming languages</td>
+</tr>
+<tr>
+<td><code>renderRelease()</code></td>
+<td>[tao_core_release]</td>
+<td>Release</td>
+<td>Version number of the current TAO release</td>
+</tr>
+<tr>
+<td><code>renderServerSideAndSource()</code></td>
+<td>[tao_core_server_side_and_source]</td>
+<td>Server side and source</td>
+<td>Server-side requirements and source downloads combined</td>
+</tr>
+<tr>
+<td><code>renderServers()</code></td>
+<td>[tao_core_servers]</td>
+<td>Servers</td>
+<td>Supported web servers</td>
+</tr>
+<tr>
+<td><code>renderSourceDownloads()</code></td>
+<td>[tao_core_source_downloads]</td>
+<td>Source downloads</td>
+<td>Source downloads (zip archive, GitHub)</td>
+</tr>
+<tr>
+<td><code>renderViewportsAndDevices()</code></td>
+<td>[tao_core_viewports_and_devices]</td>
+<td>Viewports and devices</td>
+<td>Supported viewports and devices</td>
+</tr>
+<tr>
+<td><code>renderVirtualized()</code></td>
+<td>[tao_core_virtualized]</td>
+<td>Virtualized</td>
+<td>Docker related (Docker Desktop and command line to run TAO)</td>
+</tr>
+<tr>
+<td><code>renderVirtualizedComplete()</code></td>
+<td>[tao_core_virtualized_complete]</td>
+<td>Virtualized complete</td>
+<td>Docker related with heading and description</td>
+</tr>
+</tbody>
+</table>
+<h2>Development</h2>
+<p>The plugin is usable and while it could be improved a bit here and there, we have no immediate need to do this. If you work on it, however, you will need to bump the version in <code>tao-system-requirements.php</code> and to deploy by executing one of the following commands from de repository root.</p>
+<pre><code class="language-bash">php ./src/implementations/wordpress-plugin/tao-system-requirements/deploy.php
+# or
+npm run deploy:wp-plugin</code></pre>
+<p>This creates a new archive <code>build/wp-plugin</code>, which will then be found from within WordPress.</p>
+<p>You can test the plugin by installing it on a random WordPress.</p>
+</main>
+</body>
+
+</html>

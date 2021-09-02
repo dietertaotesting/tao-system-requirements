@@ -12,5 +12,8 @@
             "name": "Dieter Raber",
             "email": "dieter@taotesting.com"
         }
-    ]
+    ],
+    "require": {
+        "erusev/parsedown": "^1.7"
+    }
 }

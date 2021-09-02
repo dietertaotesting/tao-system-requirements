@@ -16,12 +16,22 @@ class ComposerStaticInitd810c65a53e33c1ad36327320bacef48
     public static $prefixDirsPsr4 = array (
         'Oat\\TaoSystemRequirements\\' => 
         array (
-            0 => __DIR__ . '/../..',
+            0 => __DIR__ . '/../..' . '/src',
+        ),
+    );
+
+    public static $prefixesPsr0 = array (
+        'P' => 
+        array (
+            'Parsedown' => 
+            array (
+                0 => __DIR__ . '/..' . '/erusev/parsedown',
+            ),
         ),
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..',
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
@@ -29,6 +39,7 @@ class ComposerStaticInitd810c65a53e33c1ad36327320bacef48
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitd810c65a53e33c1ad36327320bacef48::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitd810c65a53e33c1ad36327320bacef48::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitd810c65a53e33c1ad36327320bacef48::$prefixesPsr0;
             $loader->classMap = ComposerStaticInitd810c65a53e33c1ad36327320bacef48::$classMap;
 
         }, null, ClassLoader::class);
