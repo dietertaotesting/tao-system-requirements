@@ -197,6 +197,14 @@
       </div>
     </section>
   </main>
+  <script>
+  if (window.parent !== window.top) {
+    document.body.classList.add('in-iframe');
+  }
+  else {
+    document.body.classList.add('not-in-iframe');
+  }
+</script>
 </body>
 
 </html>
