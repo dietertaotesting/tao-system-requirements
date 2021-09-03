@@ -53,6 +53,8 @@ You can test the plugin by installing it on a random WordPress:
 - Create a random post
 - Paste the shortcodes into the post
 
+The post should now roughly look like `build/index.html`, pay particular attention to the browser list which is expected to come with all icons.
+
 They should all display different sections of the system requirements. Note there will be duplicates because some shortcodes are wrappers of multiple others.
 
 Example: `[tao_core_servers]` + `[tao_core_source_downloads]` = `[tao_core_server_side_and_source]`.
