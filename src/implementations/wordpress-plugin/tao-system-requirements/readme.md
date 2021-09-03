@@ -22,18 +22,18 @@ This will look for a template `views/front-end/servers.php` (the name is based o
 ### Shortcodes 
 Currently the mapping is the following:
 
-| Method                        | Short code                        | Label                  | Description                                                 |
-|-------------------------------|-----------------------------------|------------------------|-------------------------------------------------------------|
-| `renderBrowsers()`            | [tao_core_browsers]               | Browsers               | Supported browsers                                          |
-| `renderDatabases()`           | [tao_core_databases]              | Databases              | Supported databases                                         |
-| `renderLanguages()`           | [tao_core_languages]              | Languages              | Supported programming languages                             |
-| `renderRelease()`             | [tao_core_release]                | Release                | Version number of the current TAO release                   |
-| `renderServerSideAndSource()` | [tao_core_server_side_and_source] | Server side and source | Server-side requirements and source downloads combined      |
-| `renderServers()`             | [tao_core_servers]                | Servers                | Supported web servers                                       |
-| `renderSourceDownloads()`     | [tao_core_source_downloads]       | Source downloads       | Source downloads (zip archive, GitHub)                      |
-| `renderViewportsAndDevices()` | [tao_core_viewports_and_devices]  | Viewports and devices  | Supported viewports and devices                             |
-| `renderVirtualized()`         | [tao_core_virtualized]            | Virtualized            | Docker related (Docker Desktop and command line to run TAO) |
-| `renderVirtualizedComplete()` | [tao_core_virtualized_complete]   | Virtualized complete   | Docker related with heading and description                 |
+| Method                        | Short code                            | Label                  | Description                                                 |
+|-------------------------------|---------------------------------------|------------------------|-------------------------------------------------------------|
+| `renderBrowsers()`            | **[tao_core_browsers]**               | Browsers               | Supported browsers                                          |
+| `renderDatabases()`           | **[tao_core_databases]**              | Databases              | Supported databases                                         |
+| `renderLanguages()`           | **[tao_core_languages]**              | Languages              | Supported programming languages                             |
+| `renderRelease()`             | **[tao_core_release]**                | Release                | Version number of the current TAO release                   |
+| `renderServerSideAndSource()` | **[tao_core_server_side_and_source]** | Server side and source | Server-side requirements and source downloads combined      |
+| `renderServers()`             | **[tao_core_servers]**                | Servers                | Supported web servers                                       |
+| `renderSourceDownloads()`     | **[tao_core_source_downloads]**       | Source downloads       | Source downloads (zip archive, GitHub)                      |
+| `renderViewportsAndDevices()` | **[tao_core_viewports_and_devices]**  | Viewports and devices  | Supported viewports and devices                             |
+| `renderVirtualized()`         | **[tao_core_virtualized]**            | Virtualized            | Docker related (Docker Desktop and command line to run TAO) |
+| `renderVirtualizedComplete()` | **[tao_core_virtualized_complete]**   | Virtualized complete   | Docker related with heading and description                 |
 
 
 ## Development
@@ -53,8 +53,8 @@ You can test the plugin by installing it on a random WordPress:
 - Create a random post
 - Paste the shortcodes into the post
 
-The post should now roughly look like `build/index.html`, pay particular attention to the browser list which is expected to come with all icons.
+If you preview the post it should roughly look like `build/index.html`. 
 
-They should all display different sections of the system requirements. Note there will be duplicates because some shortcodes are wrappers of multiple others.
+- the browser list is expected to come with all icons
+- all sections exposed by the API should be present. Note, that there will be duplicates because some shortcodes are wrappers of multiple others. Example: `[tao_core_servers]` + `[tao_core_source_downloads]` = `[tao_core_server_side_and_source]`
 
-Example: `[tao_core_servers]` + `[tao_core_source_downloads]` = `[tao_core_server_side_and_source]`.
