@@ -17,7 +17,7 @@ public function renderServers(): string
     ]);
 }
 ```
-This will look for a template `views/front-end/servers.php` (the name is based on the key of the array) and populate it with the API data from `server.stack.servers`. Note that only method starting with `render` will be converted to WordPress shortcodes. As you can see in the table below, the name of the method as well as the comment are used to build the shortcode itself along with the label and the description.
+This will look for a template `views/front-end/servers.php` (the name is based on the key of the array) and populate it with the API data from `server.stack.servers`. Note that only methods starting with `render` will be converted to WordPress shortcodes. As you can see in the table below, the name of the method as well as the comment are used to build the shortcode itself along with the label and the description.
 
 ### Shortcodes 
 Currently the mapping is the following:
