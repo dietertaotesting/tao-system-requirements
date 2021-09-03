@@ -22,18 +22,18 @@ This will look for a template `views/front-end/servers.php` (the name is based o
 ### Shortcodes 
 Currently the mapping is the following:
 
-| Method                        | Short code                        | Label                  | Description                                                 |
-|-------------------------------|-----------------------------------|------------------------|-------------------------------------------------------------|
-| `renderBrowsers()`            | [tao_core_browsers]               | Browsers               | Supported browsers                                          |
-| `renderDatabases()`           | [tao_core_databases]              | Databases              | Supported databases                                         |
-| `renderLanguages()`           | [tao_core_languages]              | Languages              | Supported programming languages                             |
-| `renderRelease()`             | [tao_core_release]                | Release                | Version number of the current TAO release                   |
-| `renderServerSideAndSource()` | [tao_core_server_side_and_source] | Server side and source | Server-side requirements and source downloads combined      |
-| `renderServers()`             | [tao_core_servers]                | Servers                | Supported web servers                                       |
-| `renderSourceDownloads()`     | [tao_core_source_downloads]       | Source downloads       | Source downloads (zip archive, GitHub)                      |
-| `renderViewportsAndDevices()` | [tao_core_viewports_and_devices]  | Viewports and devices  | Supported viewports and devices                             |
-| `renderVirtualized()`         | [tao_core_virtualized]            | Virtualized            | Docker related (Docker Desktop and command line to run TAO) |
-| `renderVirtualizedComplete()` | [tao_core_virtualized_complete]   | Virtualized complete   | Docker related with heading and description                 |
+| Method                        | Short code                            | Label                  | Description                                                 |
+|-------------------------------|---------------------------------------|------------------------|-------------------------------------------------------------|
+| `renderBrowsers()`            | **[tao_core_browsers]**               | Browsers               | Supported browsers                                          |
+| `renderDatabases()`           | **[tao_core_databases]**              | Databases              | Supported databases                                         |
+| `renderLanguages()`           | **[tao_core_languages]**              | Languages              | Supported programming languages                             |
+| `renderRelease()`             | **[tao_core_release]**                | Release                | Version number of the current TAO release                   |
+| `renderServerSideAndSource()` | **[tao_core_server_side_and_source]** | Server side and source | Server-side requirements and source downloads combined      |
+| `renderServers()`             | **[tao_core_servers]**                | Servers                | Supported web servers                                       |
+| `renderSourceDownloads()`     | **[tao_core_source_downloads]**       | Source downloads       | Source downloads (zip archive, GitHub)                      |
+| `renderViewportsAndDevices()` | **[tao_core_viewports_and_devices]**  | Viewports and devices  | Supported viewports and devices                             |
+| `renderVirtualized()`         | **[tao_core_virtualized]**            | Virtualized            | Docker related (Docker Desktop and command line to run TAO) |
+| `renderVirtualizedComplete()` | **[tao_core_virtualized_complete]**   | Virtualized complete   | Docker related with heading and description                 |
 
 
 ## Development
