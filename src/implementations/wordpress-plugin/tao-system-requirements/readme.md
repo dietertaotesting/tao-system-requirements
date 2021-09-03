@@ -4,8 +4,23 @@
 
 This plugin retrieves the latest system requirements and download URLs from the API (behind a GH-Page) on [oat-sa.github.io/tao-system-requirements](https://oat-sa.github.io/tao-system-requirements). It provides WordPress shortcodes for all blocks as well as a stylesheet including all assets. Data will be cached in WP based on `config/config.json#cache:lifetime`.
 
+### How the controller works
+```php
+/**
+ * Supported web servers
+ * @return string
+ */
+public function renderServers(): string
+{
+    return $this->render([
+        'servers' => $this->data['server']['stack']['servers']
+    ]);
+}
+```
+This will look for a template `views/front-end/servers.php` (the name is based on the key of the array) and populate it with the API data from `server.stack.servers`. Note that only method needs that start with `render` will be converted to WordPress shortcodes. As you can see in the table below, the name of the method as well as the comment are used to build the shortcode itself along with the label and the description.
+
 ### Shortcodes 
-The shortcodes are generated from the method names and comments of `tao-system-requirements/src/Controller.php`. All methods starting with `render` create a corresponding shortcode. Currently the mapping is the following:
+Currently the mapping is the following:
 
 | Method                        | Short code                        | Label                  | Description                                                 |
 |-------------------------------|-----------------------------------|------------------------|-------------------------------------------------------------|
@@ -31,9 +46,12 @@ npm run deploy:wp-plugin
 ``` 
 This creates a new archive `build/wp-plugin`, which will then be found from within WordPress.
 
+## Testing the implementation
+
 You can test the plugin by installing it on a random WordPress:
+
 - Create a random post
-- Paste the shortcuts in
+- Paste the shortcodes into the post
 
 They should all display different sections of the system requirements. Note there will be duplicates because some shortcodes are wrappers of multiple others.
 
