@@ -44,7 +44,7 @@ php ./src/implementations/wordpress-plugin/tao-system-requirements/deploy.php
 # or
 npm run deploy:wp-plugin
 ``` 
-This creates a new archive `build/wp-plugin`, which will then be found from within WordPress.
+This creates a new archive `build/wp-plugin/tao-system-requirements.zip`, which will then be discovered by WordPress installations that use the plugin.
 
 ## Testing the implementation
 
