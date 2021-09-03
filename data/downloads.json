@@ -8,16 +8,12 @@
 			{
 				"label": "Docker Desktop for Mac",
 				"access": "https://hub.docker.com/editions/community/docker-ce-desktop-mac"
-			},
-			{
-				"label": "Docker Desktop for Linux",
-				"access": "https://hub.docker.com/search?offering=community&operating_system=linux&q=&type=edition"
 			}
 		],
 		"containers": [
 			{
 				"label": "Start TAO from the command line",
-				"access": "docker run tao-{{release}}"
+				"access": "docker run tao"
 			}
 		]
 	},
